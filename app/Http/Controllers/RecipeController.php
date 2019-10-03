@@ -13,7 +13,8 @@ use Illuminate\Support\Facades\Auth;
 class RecipeController extends Controller
 {
     public function getList(){
-    	$recipes = Recipes::orderBy('id','DESC')->paginate(5,['*'],'page1');
+    	// $recipes = Recipes::orderBy('id','DESC')->paginate(5,['*'],'page1');
+        $recipes = Recipes::all();
         return view('admin.recipes.list',['recipes'=>$recipes]);
     }
 

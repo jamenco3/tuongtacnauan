@@ -20,7 +20,7 @@
   <div class="row" style="height: 45px">
     <div id="navbar" class="navbar-collapse collapse">
       <ul id="top-menu" class="nav navbar-nav navbar-right mu-main-nav fz">
-        <li><a href="{{ route('trang-chu') }}">TRANG CHỦ</a></li>
+        <li><a href="{{ route('trang-chu') }}"><img style="margin-top: -10px" width="39px" height="39px" src="upload/icon/home.png" alt=""></a></li>
         <li><a href="#mu-about-us">GIỚI THIỆU</a></li>                       
         <li><a href="#mu-restaurant-menu">THỰC ĐƠN</a></li>                       
         {{-- <li><a href="#mu-reservation">RESERVATION</a></li>                        --}}
@@ -62,7 +62,12 @@
       </form>
       @if(Auth::check())
       <div class="iconAccount">
-          <a href=""><img style="border-radius:50%; margin-top: 30px;" width="38px"; height="38px" src="upload/avatar/{{ Auth::user()->avatar }}" alt="">
+          <a href=""><img style="border-radius:50%; margin-top: 18px;" width="38px"; height="38px" src="upload/avatar/{{ Auth::user()->avatar }}" alt="">
+          </a>
+      </div>
+      @else
+      <div class="iconAccount">
+          <a href="{{ route('login') }}"><img style="border-radius:50%; margin-top: 18px;" width="38px"; height="38px" src="upload/icon/account.png" alt="">
           </a>
       </div>
       @endif

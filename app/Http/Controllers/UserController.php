@@ -52,7 +52,7 @@ class UserController extends Controller
 	    $user->email = $request->email;
         $user->address = $request->address;
         $user->phone = $request->phone;
-        $user->avatar = $request->avatar;
+        // $user->avatar = $request->avatar;
         $user->password = bcrypt($request->password);
         $user->role = $request->role;
         $user->level = 10;
@@ -118,7 +118,7 @@ class UserController extends Controller
         $user->email = $request->email;
         $user->address = $request->address;
         $user->phone = $request->phone;
-        $user->avatar = $request->avatar;
+        // $user->avatar = $request->avatar;
         $user->password = bcrypt($request->password);
         $user->role = $request->role;
         $user->level = 1;

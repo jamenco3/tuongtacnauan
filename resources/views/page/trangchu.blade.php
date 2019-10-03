@@ -43,7 +43,67 @@
   <!-- Start Counter Section -->
   @include('couter')
   <!-- End Counter Section --> 
-  
+   <!--product area start-->
+    <div class="product_area deals_product mb-50">
+      <section id="mu-gallery">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="mu-title" style="height: 40px">
+                       <h2>Công thức bởi MonNgon365</h2>
+                    </div>
+                </div>
+            </div> 
+            <div class="row">
+                <div class="product_carousel product_column4 owl-carousel">
+                  @foreach($recipes as $re)
+                  <div class="col-lg-3" style="height: 380px">
+                        <article class="single_product">
+                            <figure>
+                               <div class="product_name" style="height: 40px">
+                                   <h4><a href="#"><strong>{{ $re->name }}</strong></a></h4>
+                               </div>
+                               {{-- <div class="product_rating">
+                                   <ul>
+                                       <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+                                       <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+                                       <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+                                       <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+                                       <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+                                   </ul>
+                               </div> --}}
+
+                                <div class="product_thumb">
+                                    <a class="primary_img" href="#"><img style="border-radius: 10px" src="upload/dish/{{ $re->dish->image }}" alt=""></a>
+                                    <div>
+                                        <span class="label_sale"><strong>Độ khó: </strong>
+                                          @if($re->level == 1) {{ "Dễ" }}
+                                          @elseif($re->level == 2) {{ "Trung bình" }}
+                                          @else {{ "Khó" }}</span>
+                                          @endif
+                                    </div>
+                                    <div>
+                                        <span class="label_sale"><strong>Phần: </strong>{{ $re->eater }} người</span>                                         
+                                    </div>
+                                    <div class="quick_button">
+                                        <a href="#" title="quick view">>>><strong>Học nấu ngay</strong><<<</a>
+                                    </div>
+                                </div>
+                                <div class="price_box"> 
+                                    <span><strong>Mô tả: </strong>{{ $re->dish->note }}</span> 
+                                    
+                                </div>
+                            </figure>
+                        </article>
+                  </div> 
+                  @endforeach
+                </div>
+            </div>
+            <div class="row">{{ $recipes->links() }}</div>
+        </div>
+      </section>
+    </div>
+    <!--product area end-->
   {{-- @include('public') --}}
   <!-- Start Restaurant Menu -->
   @include('menu')
