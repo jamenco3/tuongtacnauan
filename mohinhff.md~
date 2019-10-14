@@ -386,7 +386,7 @@
 			supplier   	"Use Case View::Recipe Collector"
 			quidu      	"5D7F54F7009F"
 			is_navigable 	TRUE)))
-	    (object Class_Category "HeThongNauAnTuongTac"
+	    (object Class_Category "Recipe Management System"
 		quid       	"5D7EF48D03C2"
 		exportControl 	"Public"
 		logical_models 	(list unit_reference_list)
@@ -401,8 +401,8 @@
 		origin_x   	1175
 		origin_y   	0
 		items      	(list diagram_item_list
-		    (object CategoryView "Use Case View::HeThongNauAnTuongTac" @1
-			location   	(1747, 771)
+		    (object CategoryView "Use Case View::Recipe Management System" @1
+			location   	(1728, 803)
 			font       	(object Font
 			    size       	10
 			    face       	"Arial"
@@ -414,18 +414,18 @@
 			    default_color 	TRUE)
 			label      	(object ItemLabel
 			    Parent_View 	@1
-			    location   	(794, 15)
+			    location   	(722, 65)
 			    fill_color 	13434879
 			    nlines     	2
-			    max_width  	1906
+			    max_width  	2012
 			    justify    	0
-			    label      	"HeThongNauAnTuongTac")
+			    label      	"Recipe Management System")
 			icon_style 	"Icon"
 			line_color 	3342489
 			fill_color 	13434879
 			quidu      	"5D7EF48D03C2"
-			width      	1919
-			height     	1525)
+			width      	2025
+			height     	1488)
 		    (object UseCaseView "Use Case View::User interaction" @2
 			location   	(2427, 1246)
 			font       	(object Font

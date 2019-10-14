@@ -95,55 +95,69 @@
                         </div>
                         <div class="control-group">
                           <label class="control-label" style="color: Red">CÁC BƯỚC THỰC HIỆN</label>
-                        </div>       
-                        <div class="control-group">
-                          <label class="control-label" for="textarea2">Bước 1</label>
-                          <div class="controls">
-                            <textarea name="step_1" class="input-xlarge textarea" placeholder="Bước 1 ..." style="width: 810px; height: 200px"></textarea>
+                        </div>   
+
+                        <div>
+                          <div class="control-group">
+                            <label class="control-label" for="textarea2">Bước 1</label>
+                            <div class="controls">
+                              <textarea name="step_1" class="input-xlarge textarea" placeholder="Bước 1 ..." style="width: 810px; height: 200px"></textarea>
+                            </div>
+                          </div>
+                          <div class="control-group">
+                            <label class="control-label" for="fileInput">Hình ảnh bước 1</label>
+                            <div class="controls">
+                              <input name="image_1" class="input-file uniform_on" id="fileInput" type="file">
+                            </div>
                           </div>
                         </div>
-                        <div class="control-group">
-                          <label class="control-label" for="fileInput">Hình ảnh bước 1</label>
-                          <div class="controls">
-                            <input name="image_1" class="input-file uniform_on" id="fileInput" type="file">
+
+                        <div>
+                          <div class="control-group">
+                            <label class="control-label" for="textarea2">Bước 2</label>
+                            <div class="controls">
+                              <textarea name="step_2" class="input-xlarge textarea" placeholder="Bước 2 ..." style="width: 810px; height: 200px"></textarea>
+                            </div>
+                          </div>
+                          <div class="control-group">
+                            <label class="control-label" for="fileInput">Hình ảnh bước 2</label>
+                            <div class="controls">
+                              <input name="image_2" class="input-file uniform_on" id="fileInput" type="file">
+                            </div>
                           </div>
                         </div>
-                        <div class="control-group">
-                          <label class="control-label" for="textarea2">Bước 2</label>
-                          <div class="controls">
-                            <textarea name="step_2" class="input-xlarge textarea" placeholder="Bước 2 ..." style="width: 810px; height: 200px"></textarea>
+
+                        <div>
+                          <div class="control-group">
+                            <label class="control-label" for="textarea2">Bước 3</label>
+                            <div class="controls">
+                              <textarea name="step_3" class="input-xlarge textarea" placeholder="Bước 3 ..." style="width: 810px; height: 200px"></textarea>
+                            </div>
+                          </div>
+                          <div class="control-group">
+                            <label class="control-label" for="fileInput">Hình ảnh bước 3</label>
+                            <div class="controls">
+                              <input name="image_3" class="input-file uniform_on" id="fileInput" type="file">
+                            </div>
                           </div>
                         </div>
-                        <div class="control-group">
-                          <label class="control-label" for="fileInput">Hình ảnh bước 2</label>
-                          <div class="controls">
-                            <input name="image_2" class="input-file uniform_on" id="fileInput" type="file">
+                        
+                        <div>
+                          <div class="control-group">
+                            <label class="control-label" for="textarea2">Bước 4</label>
+                            <div class="controls">
+                              <textarea name="step_4" class="input-xlarge textarea" placeholder="Bước 4 ..." style="width: 810px; height: 200px"></textarea>
+                            </div>
                           </div>
-                        </div>
-                        <div class="control-group">
-                          <label class="control-label" for="textarea2">Bước 3</label>
-                          <div class="controls">
-                            <textarea name="step_3" class="input-xlarge textarea" placeholder="Bước 3 ..." style="width: 810px; height: 200px"></textarea>
+                          <div class="control-group">
+                            <label class="control-label" for="fileInput">Hình ảnh bước 4</label>
+                            <div class="controls">
+                              <input name="image_4" class="input-file uniform_on" id="fileInput" type="file">
+                            </div>
                           </div>
-                        </div>
-                        <div class="control-group">
-                          <label class="control-label" for="fileInput">Hình ảnh bước 3</label>
-                          <div class="controls">
-                            <input name="image_3" class="input-file uniform_on" id="fileInput" type="file">
-                          </div>
-                        </div>
-                        <div class="control-group">
-                          <label class="control-label" for="textarea2">Bước 4</label>
-                          <div class="controls">
-                            <textarea name="step_4" class="input-xlarge textarea" placeholder="Bước 4 ..." style="width: 810px; height: 200px"></textarea>
-                          </div>
-                        </div>
-                        <div class="control-group">
-                          <label class="control-label" for="fileInput">Hình ảnh bước 4</label>
-                          <div class="controls">
-                            <input name="image_4" class="input-file uniform_on" id="fileInput" type="file">
-                          </div>
-                        </div>
+                      </div>
+
+                      <div>
                         <div class="control-group">
                           <label class="control-label" for="textarea2">Bước 5</label>
                           <div class="controls">
@@ -156,6 +170,9 @@
                             <input name="image_5" class="input-file uniform_on" id="fileInput" type="file">
                           </div>
                         </div>
+                      </div>
+
+                      <div>
                         <div class="control-group">
                           <label class="control-label" for="textarea2">Bước 6</label>
                           <div class="controls">
@@ -167,7 +184,24 @@
                           <div class="controls">
                             <input name="image_6" class="input-file uniform_on" id="fileInput" type="file">
                           </div>
-                        </div>                       
+                        </div>    
+                      </div>  
+
+                      <div>
+                        <div class="control-group">
+                          <label class="control-label" for="textarea2">Bước 7</label>
+                          <div class="controls">
+                            <textarea name="step_7" class="input-xlarge textarea" placeholder="Bước 7 ..." style="width: 810px; height: 200px"></textarea>
+                          </div>
+                        </div>
+                        <div class="control-group">
+                          <label class="control-label" for="fileInput">Hình ảnh bước 7</label>
+                          <div class="controls">
+                            <input name="image_7" class="input-file uniform_on" id="fileInput" type="file">
+                          </div>
+                        </div>     
+                      </div>
+                      
                         <div class="form-actions">
                           <button type="submit" class="btn btn-primary">Thêm</button>
                           <button type="reset" class="btn">Cancel</button>

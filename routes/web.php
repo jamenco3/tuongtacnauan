@@ -127,3 +127,27 @@ Route::get('index',[
 	'uses'=>'PageController@getIndex'
 ]);
 
+Route::get('search',[
+	'as'=>'search',
+	'uses'=>'PageController@getSearch'
+]);
+
+Route::get('contact',[
+	'as'=>'contact',
+	'uses'=>'PageController@getContact'
+]);
+
+Route::get('about',[
+	'as'=>'about',
+	'uses'=>'PageController@getAbout'
+]);
+
+Route::get('gallery',[
+	'as'=>'gallery',
+	'uses'=>'PageController@getGallery'
+]);
+
+Route::get('menu',[
+	'as'=>'menu',
+	'uses'=>'PageController@getMenu'
+]);

@@ -30,8 +30,8 @@ class RecipeController extends Controller
                 'dish'=>'required',
                 'name'=>'required|min:3|max:100|unique:Recipes,name',
                 'step_1'=>'required',
-                'step_2'=>'required',
-                'step_3'=>'required',              
+                // 'step_2'=>'required',
+                // 'step_3'=>'required',              
                 'amount'=>'required|numeric',
                 'materials'=>'required',
                 'eater'=>'required|numeric',
@@ -41,8 +41,8 @@ class RecipeController extends Controller
                 'dish.required'=>'Bạn chưa chọn món ăn',
                 'name.required'=>'Bạn chưa nhập tên công thức',              
                 'step_1.required'=>'Bạn chưa nhập bước 1',
-                'step_2.required'=>'Bạn chưa nhập bước 2',
-                'step_3.required'=>'Bạn chưa nhập bước 3',
+                // 'step_2.required'=>'Bạn chưa nhập bước 2',
+                // 'step_3.required'=>'Bạn chưa nhập bước 3',
                 'name.unique'=>'Tên công thức đã tồn tại',
                 'name.min'=>'Tên công thức phải có độ dài từ 3 đến 100 kí tự',
                 'name.max'=>'Tên công thức phải có độ dài từ 3 đến 100 kí tự',
@@ -77,7 +77,10 @@ class RecipeController extends Controller
             $recipes->step_6= "";
         else
             $recipes->step_6 = $request->step_6;
-
+        if($request->step_7 == "")
+            $recipes->step_7= "";
+        else
+            $recipes->step_7 = $request->step_7;
         // hình bước 1
         if($request->hasFile('image_1')){
             $file = $request-> file('image_1');
@@ -185,6 +188,24 @@ class RecipeController extends Controller
             $recipes->image_6= $hinh;
         }else{
             $recipes->image_6 = "";
+        }
+        //hinh buoc 7
+        if($request->hasFile('image_7')){
+            $file = $request-> file('image_7');
+            $duoi = $file -> getClientOriginalExtension();
+            if($duoi != 'jpg' && $duoi !='png'  && $duoi != 'jpeg'){
+                return redirect('admin/recipes/add')->with('thongbao','Bạn chỉ được chọn file có đuôi jpg,png,jpeg! ');
+            }
+            // $file = $request->file('sanpham');
+            $name = $file->getClientOriginalName();
+            $hinh = str_random(4)."_".$name;
+            while(file_exists("upload/recipes/".$hinh)){
+                $hinh = str_random(4)."_".$name;
+            }
+            $file->move("upload/recipes",$hinh);
+            $recipes->image_7= $hinh;
+        }else{
+            $recipes->image_7 = "";
         }
         $recipes->level = $request->level;
         $recipes->amount = $request->amount; // số nguyên liệu
