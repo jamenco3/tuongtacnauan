@@ -10,10 +10,11 @@ use App\Comment;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 
+
 class RecipeController extends Controller
 {
     public function getList(){
-    	// $recipes = Recipes::orderBy('id','DESC')->paginate(5,['*'],'page1');
+        // $recipes = Recipes::orderBy('id','DESC')->paginate(5,['*'],'page1');
         $recipes = Recipes::all();
         return view('admin.recipes.list',['recipes'=>$recipes]);
     }
@@ -21,7 +22,7 @@ class RecipeController extends Controller
     public function getAdd(){
         $category = Category::where('status',1)->get();
         $dish = Dish::where('status',1)->get();
-    	return view('admin.recipes.add',['category'=>$category,'dish'=>$dish]);
+        return view('admin.recipes.add',['category'=>$category,'dish'=>$dish]);
     }
 
      public function postAdd(Request $request){
@@ -30,8 +31,8 @@ class RecipeController extends Controller
                 'dish'=>'required',
                 'name'=>'required|min:3|max:100|unique:Recipes,name',
                 'step_1'=>'required',
-                // 'step_2'=>'required',
-                // 'step_3'=>'required',              
+                'step_2'=>'required',
+                'step_3'=>'required',              
                 'amount'=>'required|numeric',
                 'materials'=>'required',
                 'eater'=>'required|numeric',
@@ -41,8 +42,8 @@ class RecipeController extends Controller
                 'dish.required'=>'Bạn chưa chọn món ăn',
                 'name.required'=>'Bạn chưa nhập tên công thức',              
                 'step_1.required'=>'Bạn chưa nhập bước 1',
-                // 'step_2.required'=>'Bạn chưa nhập bước 2',
-                // 'step_3.required'=>'Bạn chưa nhập bước 3',
+                'step_2.required'=>'Bạn chưa nhập bước 2',
+                'step_3.required'=>'Bạn chưa nhập bước 3',
                 'name.unique'=>'Tên công thức đã tồn tại',
                 'name.min'=>'Tên công thức phải có độ dài từ 3 đến 100 kí tự',
                 'name.max'=>'Tên công thức phải có độ dài từ 3 đến 100 kí tự',
@@ -77,10 +78,7 @@ class RecipeController extends Controller
             $recipes->step_6= "";
         else
             $recipes->step_6 = $request->step_6;
-        if($request->step_7 == "")
-            $recipes->step_7= "";
-        else
-            $recipes->step_7 = $request->step_7;
+
         // hình bước 1
         if($request->hasFile('image_1')){
             $file = $request-> file('image_1');
@@ -188,24 +186,6 @@ class RecipeController extends Controller
             $recipes->image_6= $hinh;
         }else{
             $recipes->image_6 = "";
-        }
-        //hinh buoc 7
-        if($request->hasFile('image_7')){
-            $file = $request-> file('image_7');
-            $duoi = $file -> getClientOriginalExtension();
-            if($duoi != 'jpg' && $duoi !='png'  && $duoi != 'jpeg'){
-                return redirect('admin/recipes/add')->with('thongbao','Bạn chỉ được chọn file có đuôi jpg,png,jpeg! ');
-            }
-            // $file = $request->file('sanpham');
-            $name = $file->getClientOriginalName();
-            $hinh = str_random(4)."_".$name;
-            while(file_exists("upload/recipes/".$hinh)){
-                $hinh = str_random(4)."_".$name;
-            }
-            $file->move("upload/recipes",$hinh);
-            $recipes->image_7= $hinh;
-        }else{
-            $recipes->image_7 = "";
         }
         $recipes->level = $request->level;
         $recipes->amount = $request->amount; // số nguyên liệu
@@ -416,5 +396,124 @@ class RecipeController extends Controller
         $recipes->save();
 
         return redirect('admin/recipes/list')->with('thongbao','Bạn đã xóa thành công');
+    }
+    public function load($id)
+    {
+        
+        $recipe = Recipes::find($id);
+        $id_dish = $recipe->id_dish;
+        $Dish =Dish::find($id_dish);
+        $id_category=$Dish->id_category;
+        $Category=Category::find($id_category);
+        $id_user = $recipe->id_user;
+        $user = User::find($id_user);  //
+        $listrecipe=Recipes::where('id','!=',$id)->paginate(6); //Laays cac cong thuc khac cong thuc dang hien thi
+        $listDish =Dish::where('id','!=',$id_dish)->get();  
+        /*dd($listDish);  */                   //Laays cac mon an khac mon an dang hien thi
+        //Dem so nguyen lieu.
+        $nguyenlieu = $recipe->materials;  //Lay ra cot nguyen lieu
+        $mang=explode(',', $nguyenlieu,13);   //Tach thanh chuoi
+
+
+        $level=$recipe->level;
+        $dokho="";
+        if($level==1)
+        {
+            $dokho ='Dễ';
+        }
+        else if($level==2)
+        {
+            $dokho = 'Trung Bình';
+        }
+        else
+        {
+            $dokho = "Khó";
+        }
+        $demnguyenlieu=count($mang); //Dem so nguyen lieu
+        $Indexnguyenlieu = 0;     
+        for($i=1;$i<=6;$i++) {
+            if($recipe['step_' . $i] != null) {
+                $ArrayStep [] = $recipe['step_' . $i];
+
+            }
+            if($recipe['image_'.$i] !=null)
+            {
+                $ArrayImage[]=$recipe['image_'.$i];
+            }
+        }
+        for($i=0;$i<count($mang);$i++)
+        {
+            $ArrayMaterial []=explode(" ",$mang[$i]);
+        }
+        
+
+     /*   dd($ArrayMaterial);
+*/        foreach ($ArrayMaterial as $key => $value) {
+            
+            foreach ($value as $key1=>$value1) {
+                 $count =  count($value);
+               
+               if(is_numeric($value1) || is_float($value1))
+               {
+                $mangnguyenlieu [] = $value1;
+               }
+                
+                
+
+            }
+            
+
+           
+           
+                
+        }
+        
+        $pattern1 = '#[^\/\d]+#';
+        $pattern2= '#[\d\/]++#';
+        foreach ($mang as $key1 => $value1) {
+            preg_match_all($pattern1,$mang[$key1],$matches);
+            preg_match_all($pattern2, $mang[$key1],$matches1);
+            foreach ($matches as $key2 => $value2) {
+
+                foreach ($value2 as $key3 => $value3) {
+                    $Array1 [] = $value3;
+                }
+            }
+            foreach ($matches1 as $key4 => $value4) {
+
+                foreach ($value4 as $key5 => $value5) {
+                    $Array21 [] = $value5;
+                }
+            }
+        }
+        
+        $Array2=array_chunk($Array1,2);   
+        
+        
+        
+        
+        
+
+
+        $dembuoc=count($ArrayStep);
+      
+
+
+        return view('page.Recipes',[
+            'recipe'  =>  $recipe,
+            'Category'=> $Category,
+            'dembuoc'=>$dembuoc,
+            'Dish'=>$Dish,
+            'user'=>$user,
+            'demnguyenlieu'=>$demnguyenlieu,
+            'dokho'=>$dokho,
+            'mang'=>$mang,
+            'ArrayStep'=>$ArrayStep,
+            'ArrayImage'=>$ArrayImage,
+            'listrecipe'=> $listrecipe,
+            'mangnguyenlieu'=>$mangnguyenlieu,
+            'Array2'=>$Array2,
+            'Array21'=>$Array21
+        ]);
     }
 }

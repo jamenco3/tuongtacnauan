@@ -151,3 +151,14 @@ Route::get('menu',[
 	'as'=>'menu',
 	'uses'=>'PageController@getMenu'
 ]);
+
+Route::get('them',['as'=>'them',
+	'uses'=>'PageController@them'
+]);
+Route::get('recipes/{id}',[
+	'as'=>'recipes',
+	'uses'=>'RecipeController@load'
+]);
+Route::get('recipess',function(){
+	return view('page.recipess');
+});

@@ -10,20 +10,18 @@
         <!-- Top slider single slide -->
         @foreach($slide as $sl)
         <div class="mu-top-slider-single">
-          <img style="border-radius: 10px" src="upload/slide/{{ $sl->image }}" alt="img" width="1150px" height="380px">
+          <img style="border-radius: 2%" src="upload/slide/{{ $sl->image }}" alt="img" width="2200px" height="550px">
           <!-- Top slider content -->
           <div class="mu-top-slider-content">
             <div class="title">
               <h1 class="mt2 mb1 center" style="color: orange">Ăn gì hôm nay? Nấu ngay món ngon</h1>
             </div>
-            <form method="get" action="{{ route('search') }}">
-              <div class="search-container">
-                <span>
-                  <i class="fas fa-search"></i>
-                </span>
-                <input type="text" name="key" value="" class="form-control" placeholder="Ví dụ: kim chi, cupcake, soup, sinh tố..">
-              </div>
-            </form>
+            <div class="search-container">
+              <span>
+                <i class="fas fa-search"></i>
+              </span>
+              <input type="text" name="" value="" class="form-control" placeholder="Ví dụ: kim chi, cupcake, soup, sinh tố..">
+            </div>
             {{-- <span class="mu-slider-small-title">Chào mừng bạn đến</span> --}}
             {{-- <h2 class="mu-slider-title">Món ngon 365</h2> --}}
             <p></p>           
@@ -63,7 +61,7 @@
                         <article class="single_product">
                             <figure>
                                <div class="product_name" style="height: 40px">
-                                   <h4><a href="#"><strong>{{ $re->name }}</strong></a></h4>
+                                   <h4><a href="{{ route('recipes', $re->id) }}"><strong>{{ $re->name }}</strong></a></h4>
                                </div>
                                {{-- <div class="product_rating">
                                    <ul>
@@ -76,7 +74,7 @@
                                </div> --}}
 
                                 <div class="product_thumb">
-                                    <a class="primary_img" href="#"><img style="border-radius: 10px" src="upload/dish/{{ $re->dish->image }}" alt=""></a>
+                                    <a class="primary_img" href="{{route('recipes', $re->id)}}"><img style="border-radius: 10px" src="upload/dish/{{ $re->dish->image }}" alt=""></a>
                                     <div>
                                         <span class="label_sale"><strong>Độ khó: </strong>
                                           @if($re->level == 1) {{ "Dễ" }}
@@ -88,7 +86,7 @@
                                         <span class="label_sale"><strong>Phần: </strong>{{ $re->eater }} người</span>                                         
                                     </div>
                                     <div class="quick_button">
-                                        <a href="#" title="quick view">>>><strong>Học nấu ngay</strong><<<</a>
+                                        <a href="{{route('recipes', $re->id)}}" title="quick view">>>><strong>Học nấu ngay</strong><<<</a>
                                     </div>
                                 </div>
                                 <div class="price_box"> 
@@ -225,7 +223,7 @@
 
  
   <!-- Start Contact section -->
-  {{-- @include('contact') --}}
+  @include('contact')
   <!-- End Contact section -->
 
   <!-- Start Map section -->
