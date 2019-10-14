@@ -1,3 +1,5 @@
+@extends('master')
+@section('content')
 <section id="mu-contact">
   <div class="container">
     <div class="row">
@@ -50,14 +52,14 @@
                       <p><i class="fa fa-map-marker"></i>Minh Khai - Từ Liêm - Hà Nội</p>
                     </address>
                   </div>
-                  {{-- <div class="mu-contact-widget">
+                  <div class="mu-contact-widget">
                     <h3>  Giờ mở cửa</h3>                      
                     <address>
                       <p><span>Thứ 2 - Thứ 6</span> 9.00h đến 12.00h</p>
                       <p><span>Thứ 7</span> 9.00h đến 10.00h</p>
                       <p><span>Chủ nhật</span> 10.00h đến 12.00h</p>
                     </address>
-                  </div> --}}
+                  </div>
                 </div>
               </div>
 
@@ -68,3 +70,9 @@
     </div>
   </div>
 </section>
+  <!-- End slider  -->
+  <!-- Start Map section -->
+  @include('map')
+  <!-- End Map section -->
+
+@endsection

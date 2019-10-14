@@ -69,7 +69,7 @@
                             @elseif($u->role == 3)
                             {{ "Specialist" }}
                             @else
-                            {{ "Khách hàng" }}
+                            {{ "Thành viên" }}
                             @endif
                         </td>
                         <td>{{ $u->address }}</td>

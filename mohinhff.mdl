@@ -467,7 +467,7 @@
 			    Parent_View 	@3
 			    location   	(3047, 1478)
 			    anchor_loc 	1
-			    nlines     	1
+			    nlines     	2
 			    max_width  	362
 			    justify    	0
 			    label      	"Specialist")
@@ -884,30 +884,7 @@
 				    (854, 212)
 				    (593, 221))
 				line_style 	0)))
-		    (object UseCaseView "Use Case View::Manage User" @31
-			location   	(1439, 1243)
-			font       	(object Font
-			    size       	10
-			    face       	"Arial"
-			    bold       	FALSE
-			    italics    	FALSE
-			    underline  	FALSE
-			    strike     	FALSE
-			    color      	0
-			    default_color 	TRUE)
-			label      	(object ItemLabel
-			    Parent_View 	@31
-			    location   	(1439, 1381)
-			    anchor_loc 	1
-			    nlines     	2
-			    max_width  	630
-			    justify    	0
-			    label      	"Manage User")
-			icon_style 	"Icon"
-			line_color 	3342489
-			fill_color 	13434879
-			quidu      	"5D7F032F021E")
-		    (object UseCaseView "Use Case View:: Perform Recipe Publishing" @32
+		    (object UseCaseView "Use Case View:: Perform Recipe Publishing" @31
 			location   	(1247, 600)
 			font       	(object Font
 			    size       	10
@@ -919,7 +896,7 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@32
+			    Parent_View 	@31
 			    location   	(1247, 738)
 			    anchor_loc 	1
 			    nlines     	2
@@ -931,7 +908,7 @@
 			fill_color 	13434879
 			quidu      	"5D7F33D20234"
 			height     	118)
-		    (object ClassView "Class" "Use Case View::Recipe publisher" @33
+		    (object ClassView "Class" "Use Case View::Recipe publisher" @32
 			ShowCompartmentStereotypes 	TRUE
 			IncludeAttribute 	TRUE
 			IncludeOperation 	TRUE
@@ -946,7 +923,7 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@33
+			    Parent_View 	@32
 			    location   	(608, 810)
 			    anchor_loc 	1
 			    nlines     	2
@@ -959,46 +936,69 @@
 			quidu      	"5D7EF88D01E2"
 			annotation 	8
 			autoResize 	TRUE)
-		    (object InheritView "" @34
+		    (object InheritView "" @33
 			stereotype 	TRUE
 			line_color 	3342489
 			quidu      	"5D7EF89802AF"
-			client     	@33
+			client     	@32
 			supplier   	@25
 			vertices   	(list Points
 			    (547, 642)
 			    (230, 616))
 			line_style 	0)
-		    (object AssociationViewNew "$UNNAMED$39" @35
+		    (object AssociationViewNew "$UNNAMED$39" @34
 			location   	(901, 623)
 			stereotype 	TRUE
 			line_color 	3342489
 			quidu      	"5D7F33DF01CD"
 			roleview_list 	(list RoleViews
-			    (object RoleView "$UNNAMED$40" @36
-				Parent_View 	@35
+			    (object RoleView "$UNNAMED$40" @35
+				Parent_View 	@34
 				location   	(293, -486)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"5D7F33E00141"
-				client     	@35
-				supplier   	@32
+				client     	@34
+				supplier   	@31
 				vertices   	(list Points
 				    (901, 623)
 				    (1137, 604))
 				line_style 	0)
-			    (object RoleView "$UNNAMED$41" @37
-				Parent_View 	@35
+			    (object RoleView "$UNNAMED$41" @36
+				Parent_View 	@34
 				location   	(293, -486)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"5D7F33E00144"
-				client     	@35
-				supplier   	@33
+				client     	@34
+				supplier   	@32
 				vertices   	(list Points
 				    (901, 623)
 				    (665, 643))
 				line_style 	0)))
+		    (object UseCaseView "Use Case View::Manage User" @37
+			location   	(1439, 1243)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@37
+			    location   	(1439, 1381)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	630
+			    justify    	0
+			    label      	"Manage User")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5D7F032F021E")
 		    (object ClassView "Class" "Use Case View::Manage Recipe Structure" @38
 			ShowCompartmentStereotypes 	TRUE
 			IncludeAttribute 	TRUE
@@ -1018,7 +1018,7 @@
 			    location   	(1798, 1435)
 			    anchor_loc 	1
 			    nlines     	2
-			    max_width  	365
+			    max_width  	362
 			    justify    	0
 			    label      	"Manage Recipe Structure")
 			icon       	"Actor"
@@ -1027,31 +1027,7 @@
 			quidu      	"5D7F523B034B"
 			annotation 	8
 			autoResize 	TRUE)
-		    (object UseCaseView "Use Case View::Manage permision" @39
-			location   	(1059, 1269)
-			font       	(object Font
-			    size       	10
-			    face       	"Arial"
-			    bold       	FALSE
-			    italics    	FALSE
-			    underline  	FALSE
-			    strike     	FALSE
-			    color      	0
-			    default_color 	TRUE)
-			label      	(object ItemLabel
-			    Parent_View 	@39
-			    location   	(1059, 1407)
-			    anchor_loc 	1
-			    nlines     	2
-			    max_width  	630
-			    justify    	0
-			    label      	"Manage permision")
-			icon_style 	"Icon"
-			line_color 	3342489
-			fill_color 	13434879
-			quidu      	"5D7F54220004"
-			height     	118)
-		    (object ClassView "Class" "Use Case View::Admin" @40
+		    (object ClassView "Class" "Use Case View::Admin" @39
 			ShowCompartmentStereotypes 	TRUE
 			IncludeAttribute 	TRUE
 			IncludeOperation 	TRUE
@@ -1066,7 +1042,7 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@40
+			    Parent_View 	@39
 			    location   	(1467, 1852)
 			    anchor_loc 	1
 			    nlines     	2
@@ -1079,105 +1055,129 @@
 			quidu      	"5D7EF4A100A3"
 			annotation 	8
 			autoResize 	TRUE)
-		    (object AssociationViewNew "$UNNAMED$33" @41
+		    (object AssociationViewNew "$UNNAMED$33" @40
 			location   	(1453, 1509)
 			stereotype 	TRUE
 			line_color 	3342489
 			quidu      	"5D7F035C0021"
 			roleview_list 	(list RoleViews
-			    (object RoleView "$UNNAMED$34" @42
-				Parent_View 	@41
+			    (object RoleView "$UNNAMED$34" @41
+				Parent_View 	@40
 				location   	(-32, -286)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"5D7F035C016E"
-				client     	@41
-				supplier   	@31
+				client     	@40
+				supplier   	@37
 				vertices   	(list Points
 				    (1453, 1509)
 				    (1447, 1406))
 				line_style 	0)
-			    (object RoleView "$UNNAMED$35" @43
-				Parent_View 	@41
+			    (object RoleView "$UNNAMED$35" @42
+				Parent_View 	@40
 				location   	(-32, -286)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"5D7F035C0170"
-				client     	@41
-				supplier   	@40
+				client     	@40
+				supplier   	@39
 				vertices   	(list Points
 				    (1453, 1509)
 				    (1460, 1612))
 				line_style 	0)))
-		    (object InheritView "" @44
+		    (object InheritView "" @43
 			stereotype 	TRUE
 			line_color 	3342489
 			quidu      	"5D7EF85E01DF"
-			client     	@40
+			client     	@39
 			supplier   	@7
 			vertices   	(list Points
 			    (1524, 1689)
 			    (1993, 1690))
 			line_style 	0)
-		    (object AssociationViewNew "$UNNAMED$42" @45
+		    (object AssociationViewNew "$UNNAMED$42" @44
 			location   	(1587, 1539)
 			stereotype 	TRUE
 			line_color 	3342489
 			quidu      	"5D7F52540122"
 			roleview_list 	(list RoleViews
-			    (object RoleView "$UNNAMED$43" @46
-				Parent_View 	@45
+			    (object RoleView "$UNNAMED$43" @45
+				Parent_View 	@44
 				location   	(120, -153)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"5D7F52550121"
-				client     	@45
+				client     	@44
 				supplier   	@38
 				vertices   	(list Points
 				    (1587, 1539)
-				    (1650, 1461))
+				    (1711, 1385))
 				line_style 	0)
-			    (object RoleView "$UNNAMED$44" @47
-				Parent_View 	@45
+			    (object RoleView "$UNNAMED$44" @46
+				Parent_View 	@44
 				location   	(120, -153)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"5D7F52550123"
-				client     	@45
-				supplier   	@40
+				client     	@44
+				supplier   	@39
 				vertices   	(list Points
 				    (1587, 1539)
-				    (1524, 1618))
+				    (1524, 1615))
 				line_style 	0)))
+		    (object UseCaseView "Use Case View::Manage permision" @47
+			location   	(1059, 1269)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@47
+			    location   	(1059, 1407)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	630
+			    justify    	0
+			    label      	"Manage permision")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5D7F54220004"
+			height     	118)
 		    (object AssociationViewNew "$UNNAMED$45" @48
-			location   	(1295, 1513)
+			location   	(1312, 1531)
 			stereotype 	TRUE
 			line_color 	3342489
 			quidu      	"5D7F54270013"
 			roleview_list 	(list RoleViews
 			    (object RoleView "$UNNAMED$46" @49
 				Parent_View 	@48
-				location   	(236, 244)
+				location   	(253, 262)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"5D7F542701F3"
 				client     	@48
-				supplier   	@40
+				supplier   	@39
 				vertices   	(list Points
-				    (1295, 1513)
+				    (1312, 1531)
 				    (1408, 1631))
 				line_style 	0)
 			    (object RoleView "$UNNAMED$47" @50
 				Parent_View 	@48
-				location   	(236, 244)
+				location   	(253, 262)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"5D7F542701FD"
 				client     	@48
-				supplier   	@39
+				supplier   	@47
 				vertices   	(list Points
-				    (1295, 1513)
-				    (1182, 1396))
+				    (1312, 1531)
+				    (1216, 1432))
 				line_style 	0)))
 		    (object InheritView "" @51
 			stereotype 	TRUE
@@ -1186,10 +1186,34 @@
 			client     	@27
 			supplier   	@25
 			vertices   	(list Points
-			    (416, 353)
+			    (449, 318)
 			    (230, 546))
 			line_style 	0)
-		    (object ClassView "Class" "Use Case View::Recipe Collector" @52
+		    (object UseCaseView "Use Case View::Perform Recipe Collection" @52
+			location   	(1262, 950)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@52
+			    location   	(1262, 1088)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	630
+			    justify    	0
+			    label      	"Perform Recipe Collection")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5D7F551C02A9"
+			height     	118)
+		    (object ClassView "Class" "Use Case View::Recipe Collector" @53
 			ShowCompartmentStereotypes 	TRUE
 			IncludeAttribute 	TRUE
 			IncludeOperation 	TRUE
@@ -1204,11 +1228,11 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@52
+			    Parent_View 	@53
 			    location   	(527, 1288)
 			    anchor_loc 	1
-			    nlines     	1
-			    max_width  	365
+			    nlines     	2
+			    max_width  	362
 			    justify    	0
 			    label      	"Recipe Collector")
 			icon       	"Actor"
@@ -1217,40 +1241,16 @@
 			quidu      	"5D7F54F7009F"
 			annotation 	8
 			autoResize 	TRUE)
-		    (object InheritView "" @53
+		    (object InheritView "" @54
 			stereotype 	TRUE
 			line_color 	3342489
 			quidu      	"5D7F550D024A"
-			client     	@52
+			client     	@53
 			supplier   	@25
 			vertices   	(list Points
 			    (469, 1046)
-			    (225, 690))
+			    (259, 740))
 			line_style 	0)
-		    (object UseCaseView "Use Case View::Perform Recipe Collection" @54
-			location   	(1262, 950)
-			font       	(object Font
-			    size       	10
-			    face       	"Arial"
-			    bold       	FALSE
-			    italics    	FALSE
-			    underline  	FALSE
-			    strike     	FALSE
-			    color      	0
-			    default_color 	TRUE)
-			label      	(object ItemLabel
-			    Parent_View 	@54
-			    location   	(1262, 1088)
-			    anchor_loc 	1
-			    nlines     	2
-			    max_width  	630
-			    justify    	0
-			    label      	"Perform Recipe Collection")
-			icon_style 	"Icon"
-			line_color 	3342489
-			fill_color 	13434879
-			quidu      	"5D7F551C02A9"
-			height     	118)
 		    (object AssociationViewNew "$UNNAMED$48" @55
 			location   	(807, 1057)
 			stereotype 	TRUE
@@ -1264,7 +1264,7 @@
 				line_color 	3342489
 				quidu      	"5D7F552F0341"
 				client     	@55
-				supplier   	@54
+				supplier   	@52
 				vertices   	(list Points
 				    (807, 1057)
 				    (1030, 1004))
@@ -1276,7 +1276,7 @@
 				line_color 	3342489
 				quidu      	"5D7F552F0343"
 				client     	@55
-				supplier   	@52
+				supplier   	@53
 				vertices   	(list Points
 				    (807, 1057)
 				    (584, 1110))
@@ -2845,7 +2845,7 @@
 							ordinal    	0
 							quidu      	"000000000000"
 							creation   	FALSE)
-						    (object Message "clcik ok()"
+						    (object Message "click ok()"
 							quid       	"5D7F027F038B"
 							frequency  	"Aperiodic"
 							synchronization 	"Simple"
@@ -4083,7 +4083,7 @@
 					origin     	(195, 583)
 					terminus   	(965, 583)
 					ordinal    	0)
-				    (object InterMessView "clcik ok()" @205
+				    (object InterMessView "click ok()" @205
 					location   	(0, 755)
 					font       	(object Font
 					    size       	10
@@ -4109,9 +4109,9 @@
 					    quidu      	"5D7F027F038B"
 					    anchor_loc 	1
 					    nlines     	1
-					    max_width  	213
+					    max_width  	203
 					    justify    	0
-					    label      	"clcik ok()"
+					    label      	"click ok()"
 					    pctDist    	0.500000
 					    height     	45
 					    orientation 	0)

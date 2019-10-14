@@ -87,7 +87,7 @@
                                 <option value="1">Addmin</option>
                                 <option value="2">Employee</option>
                                 <option value="3">Specialist</option>
-                                <option value="0">Khách hàng</option>
+                                <option value="0">Thành viên</option>
                             </select>
                           </div>
                         </div>

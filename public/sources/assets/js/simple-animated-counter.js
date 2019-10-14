@@ -11,9 +11,7 @@ $(window).scroll(function() {
       }).animate({
           countNum: countTo
         },
-
         {
-
           duration: 2000,
           easing: 'swing',
           step: function() {

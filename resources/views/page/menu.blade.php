@@ -1,4 +1,6 @@
-<section id="mu-restaurant-menu">
+@extends('master')
+@section('content')
+  <section id="mu-restaurant-menu" style="margin-top: 100px">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
@@ -217,4 +219,10 @@
         </div>
       </div>
     </div>
-</section>
+  </section>
+  <!-- End slider  -->
+  <!-- Start Map section -->
+  @include('map')
+  <!-- End Map section -->
+
+@endsection

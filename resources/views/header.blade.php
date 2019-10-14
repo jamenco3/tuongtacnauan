@@ -21,15 +21,15 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul id="top-menu" class="nav navbar-nav navbar-right mu-main-nav fz">
         <li><a href="{{ route('trang-chu') }}"><img style="margin-top: -10px" width="39px" height="39px" src="upload/icon/home.png" alt=""></a></li>
-        <li><a href="#mu-about-us">GIỚI THIỆU</a></li>                       
-        <li><a href="#mu-restaurant-menu">THỰC ĐƠN</a></li>                       
+        <li><a href="{{ route('about') }}">GIỚI THIỆU</a></li>                       
+        <li><a href="{{ route('menu') }}">THỰC ĐƠN</a></li>                       
         {{-- <li><a href="#mu-reservation">RESERVATION</a></li>                        --}}
         @if(Auth::check())
         <li><a href="admin/category/list">QUẢN TRỊ</a></li>
         @endif
-        <li><a href="#mu-gallery">BỘ SƯU TẬP</a></li>
+        <li><a href="{{ route('gallery') }}">BỘ SƯU TẬP</a></li>
         <li><a href="#mu-chef">CHUYÊN GIA</a></li> 
-        <li><a href="#mu-contact">LIÊN HỆ</a></li> 
+        <li><a href="{{ route('contact') }}">LIÊN HỆ</a></li> 
       </ul>                            
     </div><!--/.nav-collapse -->         
   </div>
@@ -52,12 +52,12 @@
             <!--  Image based logo  -->
         <!-- <a class="navbar-brand" href="index.html"><img src="assets/img/logo.png" alt="Logo img"></a>  -->      
       </div>
-      <form>
-          <div class="header-search col-lg-4">
-            <input  placeholder="Tìm kiếm công thức" type="text" name="search" >
-            <button type="submit" class="btn-header--search">
-              <i class="fas fa-search"></i>
-            </button>
+      <form method="get" action="{{ route('search') }}">
+          <div class="header-search col-lg-4">           
+              <input  placeholder="Tìm kiếm công thức" type="text" name="key"  >
+              <button type="submit" class="btn-header--search">
+                <i class="fas fa-search"></i>
+              </button>
            </div>
       </form>
       @if(Auth::check())

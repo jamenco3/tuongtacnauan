@@ -10,18 +10,20 @@
         <!-- Top slider single slide -->
         @foreach($slide as $sl)
         <div class="mu-top-slider-single">
-          <img style="border-radius: 2%" src="upload/slide/{{ $sl->image }}" alt="img" width="2200px" height="550px">
+          <img style="border-radius: 10px" src="upload/slide/{{ $sl->image }}" alt="img" width="1150px" height="380px">
           <!-- Top slider content -->
           <div class="mu-top-slider-content">
             <div class="title">
               <h1 class="mt2 mb1 center" style="color: orange">Ăn gì hôm nay? Nấu ngay món ngon</h1>
             </div>
-            <div class="search-container">
-              <span>
-                <i class="fas fa-search"></i>
-              </span>
-              <input type="text" name="" value="" class="form-control" placeholder="Ví dụ: kim chi, cupcake, soup, sinh tố..">
-            </div>
+            <form method="get" action="{{ route('search') }}">
+              <div class="search-container">
+                <span>
+                  <i class="fas fa-search"></i>
+                </span>
+                <input type="text" name="key" value="" class="form-control" placeholder="Ví dụ: kim chi, cupcake, soup, sinh tố..">
+              </div>
+            </form>
             {{-- <span class="mu-slider-small-title">Chào mừng bạn đến</span> --}}
             {{-- <h2 class="mu-slider-title">Món ngon 365</h2> --}}
             <p></p>           
@@ -223,7 +225,7 @@
 
  
   <!-- Start Contact section -->
-  @include('contact')
+  {{-- @include('contact') --}}
   <!-- End Contact section -->
 
   <!-- Start Map section -->
