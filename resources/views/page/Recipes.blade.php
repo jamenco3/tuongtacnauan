@@ -380,6 +380,12 @@
 
     </div>
 </section>
+
+
+@endsection
+
+@section('script')
+
 <script type="text/javascript">
    alert('aaa');
     function tinhnguyenlieu() {
@@ -403,8 +409,4 @@
         
     }
 </script>
-
-
-
-
 @endsection

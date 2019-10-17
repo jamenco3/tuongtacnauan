@@ -1,26 +1,4 @@
-/** 
-  * Template Name: OsteriaX
-  * Version: 1 
-  * Template Scripts
-  * Author: MarkUps
-  * Author URI: http://www.markups.io/
 
-  Custom JS
-  
-
-  1. TOP SLIDER (SLICK SLIDER) 
-  2. PORTFOLIO POPUP VIEW ( IMAGE LIGHTBOX ) 
-  3. DATEPICKER
-  4. SHEF SLIDER ( SLICK SLIDER )
-  5. TESTIMONIAL SLIDER ( SLICK SLIDER )
-  6. GOOGLE MAP
-  7. MENU SMOOTH SCROLLING
-  8. HOVER DROPDOWN MENU
-  9. SCROLL TOP BUTTON
-  10. BUTTON SMOOTH SCROLL ( VIEW RESERVATION FORM ) 
-
-  
-**/
 
 jQuery(function($){
 
@@ -203,8 +181,13 @@ jQuery(function($){
     jQuery(window).scroll(function(){
       if (jQuery(this).scrollTop() > 300) {
         jQuery('.scrollToTop').fadeIn();
+         $('.header_top').fadeOut();
+         $('#mu-header').css('opacity',0.95);
+         
       } else {
+        $('.header_top').fadeIn();
         jQuery('.scrollToTop').fadeOut();
+        $('#mu-header').css('opacity',1);
       }
     });
      

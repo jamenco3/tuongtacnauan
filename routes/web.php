@@ -15,17 +15,23 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('thu',function(){
-	return view('admin.category.list');
-});
+Route::get('send-message','RedisController@index')->name('tuongtac');
+Route::post('send-message','RedisController@postSendMessage');
 
-Route::get('thu1',function(){
-	return view('admin.login');
-});
+// Route::get('thu',function(){
+// 	return view('admin.category.list');
+// });
+
+// Route::get('thu1',function(){
+// 	return view('admin.login');
+// });
 
 Route::get('admin/dangnhap/','UserController@getDangNhapAdmin')->name('login');
-Route::post('admin/dangnhap','UserController@postDangNhapAdmin')->name('loginAdmin');
+Route::post('admin/dangnhap','UserController@postDangNhapAdmin');
 Route::get('admin/logout','UserController@getDangXuatAdmin')->name('logout');
+
+Route::get('admin/dangky/','UserController@getDangKy')->name('register');
+Route::post('admin/dangky','UserController@postDangKy');
 
 Route::get('dish/{id_category}','AjaxController@getDish'); 
 

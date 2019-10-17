@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Hash;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 
@@ -197,5 +198,38 @@ class UserController extends Controller
     public function getDangXuatAdmin(){
         Auth::logout();
         return redirect()->route('trang-chu')->with('thongbao','Bạn đã đăng xuất!');
+    }
+
+    public function getDangKy(){
+        return view('page.register');
+    }
+    public function postDangKy(Request $request){
+        $this->validate($request,[
+
+                'email'=>'required|email|unique:Users,email',
+                'password'=>'required|min:6|max:32',
+                're_password'=>'required|same:password'
+            ],[
+                'email.required'=>'Vui lòng nhập email',
+                'email.email'=>'Không đúng định dạng email',
+                'email.unique'=>'Email này đã có người sử dụng',
+                'password.required'=>'Vui lòng nhập password',
+                'password.min'=>'Mật khẩu phải nhiều hơn 6 kí tự',
+                'password.max'=>'Mật khẩu phải ít hơn 32 kí tự',
+                're_password.same'=>'Mật khẩu không trùng khớp',
+                're_password.required'=>'Bạn chưa nhập lại mật khẩu'
+            ]);
+
+        $user = new User();
+
+        $user->name = $request->name;      
+        $user->email = $request->email;
+        $user->sex = $request->rdoSex;       
+        $user->password = Hash::make($request->password);
+        $user->level = 1;
+        $user->role = 1;
+        $user->save();
+
+        return redirect()->back()->with('thanhcong','Đăng ký thành công');
     }
 }
