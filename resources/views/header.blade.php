@@ -12,12 +12,14 @@
             <div class="col-lg-8 col-md-9">
                 <div class="top_right text-right">
                     <div class="header_support" style="margin-top: -7px">
-                        <p><i class="icon ion-android-alarm-clock"></i> Mở cửa 24/7 - Hỗ trợ: 0382788384 </p>
+                        <p><i class="icon ion-android-alarm-clock"></i> 24/7 - Hỗ trợ: 0382788384 </p>
                     </div>
                     <div class="header_account" style="margin-top: -15px">
                         <ul>
-                            <li class="wishlist"><a href="wishlist.html"><i class="icon ion-clipboard"></i> Wishlist </a></li>                            
-                            <li class="top_links"><a href="#"><i class="ion-gear-a"></i> Setting <i class="ion-chevron-down"></i></a>
+                            <li class="wishlist">
+                              <a href="wishlist.html"><i class="icon ion-clipboard"></i> Wishlist </a>
+                            </li>                            
+                            <li class="top_links"><a href="#"><i class="ion-gear-a"></i> Trang cá nhân <i class="ion-chevron-down"></i></a>
                                 <ul class="dropdown_links">
                                     @if(Auth::check())
                                     <li>
@@ -26,7 +28,7 @@
                                     @endif
                                     {{-- <li><a href="checkout.html">Checkout </a></li> --}}
                                     <li><a href="my-account.html">Thông tin cá nhân </a></li>
-                                    {{-- <li><a href="cart.html">Shopping Cart</a></li> --}}
+                                    <li><a href="#">Đổi mật khẩu</a></li>
                                     {{-- <li><a href="wishlist.html">Wishlist</a></li> --}}
                                 </ul>
                             </li>
@@ -89,24 +91,29 @@
         <div class="col-md-5 login-box" >       
           <div class="row col-md-10">
             <div class="postRecipe col-md-6">
-                <a href=""><div>
+              <a href="">
+                <div style="margin-top: 5px;">
                   <img width="30px"; height="30px" src="upload/logo/post.png" alt=""> Đăng công thức
-                </div></a>
+                </div>
+              </a>
             </div>
-            <div class="message col-md-3">
+            {{-- <div class="message col-md-3">
                 <a href=""><img width="30px"; height="30px" src="upload/logo/tb.png" alt=""></a>
-            </div>
+            </div> --}}
             @if(Auth::check())
             <div class="iconAccount col-md-3">
-                <a href=""><img style="border-radius:50%; " width="38px"; height="38px" src="upload/avatar/{{ Auth::user()->avatar }}" alt="">
+                <a href=""><img style="border-radius:50%; margin-left: 180px; " width="38px"; height="38px" src="upload/avatar/{{ Auth::user()->avatar }}" alt="">
                 </a>
             </div>
             @else
             <div class="iconAccount col-md-3">
-                <a href="{{ route('login') }}"><img style="border-radius:50%;" width="38px"; height="38px" src="upload/icon/account.png" alt="">
+                <a href="{{ route('login') }}"><img style="border-radius:50%; margin-left: 180px;" width="38px"; height="38px" src="upload/icon/account.png" alt="">
                 </a>
             </div>
             @endif
+            <div class="message col-md-3">
+                <a style="margin-left: 146px;" href=""><img width="35px"; height="35px" src="upload/logo/tb.png" alt=""></a>
+            </div>
           </div>
           </div>
       </div>

@@ -5,7 +5,7 @@
         <!-- block -->
 	<div class="block">
 	    <div class="navbar navbar-inner block-header">
-	        <div class="muted pull-left">Slide->List</div>
+	        <div class="muted pull-left">Slide -> Danh sách</div>
 	    </div>
 	    <div class="block-content collapse in">
 	        <div class="span12">
@@ -13,14 +13,14 @@
 	              <div class="btn-group">
 	                 <a href="{{route('addSlide')}}"><button class="btn btn-success">Thêm mới <i class="icon-plus icon-white"></i></button></a>
 	              </div>
-	              <div class="btn-group pull-right">
+	              {{-- <div class="btn-group pull-right">
 	                 <button data-toggle="dropdown" class="btn dropdown-toggle">Công cụ <span class="caret"></span></button>
 	                 <ul class="dropdown-menu">
 	                    <li><a href="#">Print</a></li>
 	                    <li><a href="#">Save as PDF</a></li>
 	                    <li><a href="#">Export to Excel</a></li>
 	                 </ul>
-	              </div>
+	              </div> --}}
 	           </div>
 	            
 	            <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example2">

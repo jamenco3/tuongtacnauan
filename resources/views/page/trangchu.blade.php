@@ -6,11 +6,11 @@
     <div class="mu-slider-are"> 
 
       <!-- Top slider -->
-      <div class="mu-top-slider"   style="margin-top: 10px">
+      <div class="mu-top-slider"   style="margin-top: 50px">
         <!-- Top slider single slide -->
         @foreach($slide as $sl)
         <div class="mu-top-slider-single">
-          <img style="border-radius: 2%" src="upload/slide/{{ $sl->image }}" alt="img" width="2200px" height="400px">
+          <img style="border-radius: 10px" src="upload/slide/{{ $sl->image }}" alt="img" width="2200px" height="400px">
           <!-- Top slider content -->
           <div class="mu-top-slider-content">
             <div class="title">               

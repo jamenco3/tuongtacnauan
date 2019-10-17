@@ -1857,7 +1857,7 @@ RESERVATION SECTION
 }
 
 .postRecipe{
-  /* background: white; */
+  background: white;
   /* width: 150px; */
   /* margin-left: 900px; */
   height: 33px;
