@@ -23,7 +23,7 @@
                                 <ul class="dropdown_links">
                                     @if(Auth::check())
                                     <li>
-                                      <a href="admin/category/list">Quản trị</a>
+                                      <a href="{{ route('dashboard') }}">Quản trị</a>
                                     </li>
                                     @endif
                                     {{-- <li><a href="checkout.html">Checkout </a></li> --}}

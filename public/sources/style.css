@@ -2278,3 +2278,28 @@ RESERVATION SECTION
     padding: 24px 0;
   }
 }
+
+#data{
+    text-align: left;
+    border: 1px solid black;
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    overflow-y: scroll;
+    height: 400px;
+}
+
+#button-input{
+  width: 79%; 
+  margin-left: -20px; 
+  border-radius: 18px; 
+  background-color:#cfcfe2; 
+  border: none; 
+  padding: 4px;
+}
+
+.bbb{
+  position: absolute; 
+  border-radius: 18px; 
+  top:-2px
+}

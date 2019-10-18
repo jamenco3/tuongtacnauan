@@ -38,7 +38,7 @@ Route::get('dish/{id_category}','AjaxController@getDish');
 Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){	
 	Route::group(['prefix'=>'category'],function(){
 		// admin/category/list
-		Route::get('list','CategoryController@getList');
+		Route::get('list','CategoryController@getList')->name('dashboard');
 
 		Route::get('delete/{id}','CategoryController@getDelete');
 
