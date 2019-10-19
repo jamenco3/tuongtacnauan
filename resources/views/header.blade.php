@@ -18,18 +18,20 @@
                         <ul>
                             <li class="wishlist">
                               <a href="wishlist.html"><i class="icon ion-clipboard"></i> Wishlist </a>
-                            </li>                            
-                            <li class="top_links"><a href="#"><i class="ion-gear-a"></i> Trang cá nhân <i class="ion-chevron-down"></i></a>
+                            </li>  
+                            @if(Auth::check())                          
+                            <li class="top_links"><a href="#"><i class="ion-gear-a"></i> Trang quản lý<i class="ion-chevron-down"></i></a>
+                              @endif
                                 <ul class="dropdown_links">
                                     @if(Auth::check())
                                     <li>
                                       <a href="{{ route('dashboard') }}">Quản trị</a>
-                                    </li>
-                                    @endif
+                                    </li>                                  
                                     {{-- <li><a href="checkout.html">Checkout </a></li> --}}
-                                    <li><a href="my-account.html">Thông tin cá nhân </a></li>
-                                    <li><a href="#">Đổi mật khẩu</a></li>
+                                    <li><a href="{{ route('get-thong-tin-ca-nhan',Auth::user()->id) }}">Thông tin cá nhân </a></li>
+                                    <li><a href="{{ route('getchangepass',Auth::user()->id) }}">Đổi mật khẩu</a></li>
                                     {{-- <li><a href="wishlist.html">Wishlist</a></li> --}}
+                                    @endif
                                 </ul>
                             </li>
                           @if(Auth::check())
@@ -37,7 +39,7 @@
                               <a href="{{ route('logout') }}">Đăng xuất</a>
                             </li>
                             @else
-                              <a href="{{ route('login') }}">Đăng nhập</a>/<a href="{{ route('register') }}">
+                              <a href="{{ route('login') }}">Đăng nhập</a>/<a href="{{ route('register') }}">Đăng ký
                             @endif
                         </ul>
                     </div>
@@ -49,14 +51,15 @@
   <div class="row" style="height: 50;">
     <div id="navbar" class="navbar-collapse collapse">
       <ul id="top-menu" class="nav navbar-nav navbar-right mu-main-nav fz">
-        <li><a href="{{ route('trang-chu') }}"><img style="margin-top: -10px" width="39px" height="39px" src="upload/icon/home.png" alt=""></a></li>
-        <li><a href="{{ route('about') }}">GIỚI THIỆU</a></li>                       
-        <li><a href="{{ route('menu') }}">THỰC ĐƠN</a></li>                       
-        <li><a href="{{ route('gallery') }}">BỘ SƯU TẬP</a></li>
+        {{-- <li><a href="{{ route('trang-chu') }}"><img style="margin-top: -10px" width="39px" height="39px" src="upload/icon/home.png" alt=""></a></li> --}}
+        <li><a href="{{ route('trang-chu') }}"><strong>TRANG CHỦ</strong></a></li>
+        <li><a href="{{ route('about') }}"><strong>GIỚI THIỆU</strong></a></li>                       
+        <li><a href="{{ route('menu') }}"><strong>THỰC ĐƠN</strong></a></li>                       
+        <li><a href="{{ route('gallery') }}"><strong>BỘ SƯU TẬP</strong></a></li>
         @if(Auth::check())
-        <li><a href="{{ route('tuongtac') }}">HỖ TRỢ NẤU ĂN</a></li> 
+        <li><a href="{{ route('tuongtac') }}"><strong>HỖ TRỢ NẤU ĂN</strong></a></li> 
         @endif
-        <li><a href="{{ route('contact') }}">LIÊN HỆ</a></li> 
+        <li><a href="{{ route('contact') }}"><strong>LIÊN HỆ</strong></a></li> 
       </ul>                            
     </div><!--/.nav-collapse -->         
   </div>
@@ -102,8 +105,13 @@
             </div> --}}
             @if(Auth::check())
             <div class="iconAccount col-md-3">
-                <a href=""><img style="border-radius:50%; margin-left: 180px; " width="38px"; height="38px" src="upload/avatar/{{ Auth::user()->avatar }}" alt="">
+              @if(Auth::user()->avatar <> null)
+                <a href="{{ route('get-thong-tin-ca-nhan',Auth::user()->id) }}"><img style="border-radius:50%; margin-left: 180px; " width="38px"; height="38px" src="upload/avatar/{{ Auth::user()->avatar }}" alt="">
                 </a>
+              @else
+                <a href="{{ route('get-thong-tin-ca-nhan',Auth::user()->id) }}"><img style="border-radius:50%; margin-left: 180px; " width="38px"; height="38px" src="upload/icon/account.png" alt="">
+                </a>
+              @endif
             </div>
             @else
             <div class="iconAccount col-md-3">

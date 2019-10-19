@@ -33,6 +33,13 @@ Route::get('admin/logout','UserController@getDangXuatAdmin')->name('logout');
 Route::get('admin/dangky/','UserController@getDangKy')->name('register');
 Route::post('admin/dangky','UserController@postDangKy');
 
+Route::get('doimatkhau/{id}','UserController@getDoiMatKhau')->name('getchangepass');
+Route::post('doimatkhau/{id}','UserController@postDoiMatKhau')->name('postchangepass');
+
+Route::get('thong-tin-ca-nhan/{id}','UserController@getThongTinCaNhan')->name('get-thong-tin-ca-nhan');
+Route::post('thong-tin-ca-nhan/{id}','UserController@postThongTinCaNhan')->name('post-thong-tin-ca-nhan');
+
+
 Route::get('dish/{id_category}','AjaxController@getDish'); 
 
 Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){	
@@ -165,6 +172,7 @@ Route::get('recipes/{id}',[
 	'as'=>'recipes',
 	'uses'=>'RecipeController@load'
 ]);
+
 Route::get('recipess',function(){
 	return view('page.recipess');
 });
