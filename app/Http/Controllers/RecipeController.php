@@ -78,7 +78,11 @@ class RecipeController extends Controller
             $recipes->step_6= "";
         else
             $recipes->step_6 = $request->step_6;
-
+        //bước 7 nếu có
+        if($request->step_7 == "")
+            $recipes->step_7= "";
+        else
+            $recipes->step_7 = $request->step_7;        
         // hình bước 1
         if($request->hasFile('image_1')){
             $file = $request-> file('image_1');
@@ -186,6 +190,24 @@ class RecipeController extends Controller
             $recipes->image_6= $hinh;
         }else{
             $recipes->image_6 = "";
+        }
+        // hình bước 7
+        if($request->hasFile('image_7')){
+            $file = $request-> file('image_7');
+            $duoi = $file -> getClientOriginalExtension();
+            if($duoi != 'jpg' && $duoi !='png'  && $duoi != 'jpeg'){
+                return redirect('admin/recipes/add')->with('thongbao','Bạn chỉ được chọn file có đuôi jpg,png,jpeg! ');
+            }
+            // $file = $request->file('sanpham');
+            $name = $file->getClientOriginalName();
+            $hinh = str_random(4)."_".$name;
+            while(file_exists("upload/recipes/".$hinh)){
+                $hinh = str_random(4)."_".$name;
+            }
+            $file->move("upload/recipes",$hinh);
+            $recipes->image_7= $hinh;
+        }else{
+            $recipes->image_7 = "";
         }
         $recipes->level = $request->level;
         $recipes->amount = $request->amount; // số nguyên liệu
@@ -261,7 +283,11 @@ class RecipeController extends Controller
             $recipes->step_6= "";
         else
             $recipes->step_6 = $request->step_6;
-
+        //bước 7 nếu có
+        if($request->step_7 == "")
+            $recipes->step_7= "";
+        else
+            $recipes->step_7 = $request->step_7;
         // hình bước 1
         if($request->hasFile('image_1')){
             $file = $request-> file('image_1');
@@ -369,6 +395,24 @@ class RecipeController extends Controller
             $recipes->image_6= $hinh;
         }else{
             $recipes->image_6 = "";
+        }
+        // hình bước 7
+        if($request->hasFile('image_7')){
+            $file = $request-> file('image_7');
+            $duoi = $file -> getClientOriginalExtension();
+            if($duoi != 'jpg' && $duoi !='png'  && $duoi != 'jpeg'){
+                return redirect('admin/recipes/add')->with('thongbao','Bạn chỉ được chọn file có đuôi jpg,png,jpeg! ');
+            }
+            // $file = $request->file('sanpham');
+            $name = $file->getClientOriginalName();
+            $hinh = str_random(4)."_".$name;
+            while(file_exists("upload/recipes/".$hinh)){
+                $hinh = str_random(4)."_".$name;
+            }
+            $file->move("upload/recipes",$hinh);
+            $recipes->image_7= $hinh;
+        }else{
+            $recipes->image_7 = "";
         }
         $recipes->level = $request->level;
         $recipes->amount = $request->amount; // số nguyên liệu
