@@ -8,4 +8,4 @@ class Key extends Model
 {
     protected $table="tukhoa";
 }
-}
+

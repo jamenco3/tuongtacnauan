@@ -227,7 +227,7 @@ class UserController extends Controller
         $user->sex = $request->rdoSex;       
         $user->password = Hash::make($request->password);
         $user->level = 1;
-        $user->role = 1;
+        $user->role = 3;
         $user->save();
 
         return redirect()->back()->with('thanhcong','Đăng ký thành công');

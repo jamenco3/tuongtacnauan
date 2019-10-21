@@ -24,7 +24,7 @@
             @endif
         @endif  
         <li>
-            <a href="#"><i class="icon-chevron-right"></i>Thông tin cá nhân</a>
+            <a href="{{ route('get-thong-tin-ca-nhan',Auth::user()->id) }}"><i class="icon-chevron-right"></i>Thông tin cá nhân</a>
         </li> 
         <li>
             <a href="{{ route('trang-chu') }}"><i class="icon-chevron-right"></i>Thoát</a>

@@ -20,13 +20,15 @@
                               <a href="wishlist.html"><i class="icon ion-clipboard"></i> Wishlist </a>
                             </li>  
                             @if(Auth::check())                          
-                            <li class="top_links"><a href="#"><i class="ion-gear-a"></i> Trang quản lý<i class="ion-chevron-down"></i></a>
-                              @endif
+                            <li class="top_links"><a href="#"><i class="ion-gear-a"></i> Trang quản lý<i class="ion-chevron-down"></i></a>                        
                                 <ul class="dropdown_links">
-                                    @if(Auth::check())
+                                    @if(Auth::user()->role == 1)
                                     <li>
                                       <a href="{{ route('dashboard') }}">Quản trị</a>
-                                    </li>                                  
+                                    </li>   
+                                    <li><a href="{{ route('get-thong-tin-ca-nhan',Auth::user()->id) }}">Thông tin cá nhân </a></li>
+                                    <li><a href="{{ route('getchangepass',Auth::user()->id) }}">Đổi mật khẩu</a></li>
+                                    @else                              
                                     {{-- <li><a href="checkout.html">Checkout </a></li> --}}
                                     <li><a href="{{ route('get-thong-tin-ca-nhan',Auth::user()->id) }}">Thông tin cá nhân </a></li>
                                     <li><a href="{{ route('getchangepass',Auth::user()->id) }}">Đổi mật khẩu</a></li>
@@ -34,6 +36,7 @@
                                     @endif
                                 </ul>
                             </li>
+                            @endif
                           @if(Auth::check())
                             <li>
                               <a href="{{ route('logout') }}">Đăng xuất</a>
