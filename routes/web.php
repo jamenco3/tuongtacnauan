@@ -39,6 +39,8 @@ Route::post('doimatkhau/{id}','UserController@postDoiMatKhau')->name('postchange
 Route::get('thong-tin-ca-nhan/{id}','UserController@getThongTinCaNhan')->name('get-thong-tin-ca-nhan');
 Route::post('thong-tin-ca-nhan/{id}','UserController@postThongTinCaNhan')->name('post-thong-tin-ca-nhan');
 
+Route::get('post','RecipeController@getPost')->name('post');
+Route::post('post','RecipeController@post');
 
 Route::get('dish/{id_category}','AjaxController@getDish'); 
 
