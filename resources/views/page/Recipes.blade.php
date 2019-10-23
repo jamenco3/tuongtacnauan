@@ -49,7 +49,7 @@
                                     <div id="DIV_45">
                                          <span id="SPAN_46">Nguyên liệu</span> <span id="SPAN_47"> <b id="B_48">
                                                                                       
-                                            {{$demnguyenlieu-1}}
+                                            {{$demnguyenlieu}}
                                          </b></span>
                                     </div>
                                 </li>
@@ -186,7 +186,7 @@
 
                                                         <ul id="UL_297" style="width: 800px">
                                                             <!-- ngRepeat: item in getIngredientByGroupId(group.id) -->
-                                                            @foreach($mang as $key=>$values)
+                                                            @foreach($Array1 as $key=>$values)
                                                             <li id="LI_298" style="width: 372px">
                                                                 <ul id="UL_299">
                                                                     <li id="LI_300">
@@ -194,15 +194,16 @@
                                                                     </li>
                                                                     <li id="LI_304" style="width: 190px">
                                                                         
-                                                                    <span id="SPAN_305" value="{{$Array21[$key]}}">{{$values}}</span>
-
+                                                                    <span id="SPAN_305" class="ex" value="">{{$Array1[$key][0]}}
+                                                                    </span>
+                                                                    <span id="id_.{{$key}}" class="ex">{{$Array21[$key]}}</span>
+                                                                    <span class="ex">{{$Array1[$key][1]}}</span>
                                                                    
                                                                    
                                                                 <!--     <span id="SPAN_mon"></span>
                                                                         -->
                                                                     </li>
-                                                                    <span style="margin-left: 8px">AAAA</span>
-                                                                    <span>AAAA</span>
+                                                                    
                                                                     
                                                                 </ul>
                                                             </li>
@@ -380,14 +381,8 @@
 
     </div>
 </section>
+<script type="text/javascript"> 
 
-
-@endsection
-
-@section('script')
-
-<script type="text/javascript">
-   alert('aaa');
     function tinhnguyenlieu() {
         
     var phanan =document.getElementById('INPUT_209').value;
@@ -396,17 +391,26 @@
         if(isNaN(phanan) || phanan<=0 )
            { document.getElementById('diverorr').style.display="block";
              document.getElementById('erorr').innerHTML='invalid value';
+             document.getElementsByClassName('ex').style.textDecoration="underline";
         }
         else
         {
+            var Array1 =[];
+           @foreach ($Array21 as $key=>$value)
+               Array1 [{{$key}}] ={{$value}}/{{$recipe->eater}}*phanan;
+               document.getElementById('id_.{{$key}}').innerHTML=Array1[{{$key}}];
+            @endforeach
             
             
-                
-
         }
-        /*alert(arr);*/
+    }
+        
 
         
-    }
+    
 </script>
+
+
+
+
 @endsection

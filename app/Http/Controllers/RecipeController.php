@@ -657,7 +657,7 @@ class RecipeController extends Controller
         /*dd($listDish);  */                   //Laays cac mon an khac mon an dang hien thi
         //Dem so nguyen lieu.
         $nguyenlieu = $recipe->materials;  //Lay ra cot nguyen lieu
-        $mang=explode(',', $nguyenlieu,13);   //Tach thanh chuoi
+        $mang=explode(',', $nguyenlieu);   //Tach thanh chuoi
 
 
         $level=$recipe->level;
@@ -714,35 +714,33 @@ class RecipeController extends Controller
         }
         
         $pattern1 = '#[^\/\d]+#';
-        $pattern2= '#[\d\/]++#';
-        foreach ($mang as $key1 => $value1) {
-            preg_match_all($pattern1,$mang[$key1],$matches);
-            preg_match_all($pattern2, $mang[$key1],$matches1);
+        $pattern2= '#[\d\/]+#';
+        foreach ($mang as $key1 => $value1)
+         {
+            preg_match_all($pattern1,$value1,$matches);
+            preg_match_all($pattern2, $value1,$matches1);
             foreach ($matches as $key2 => $value2) {
 
-                foreach ($value2 as $key3 => $value3) {
-                    $Array1 [] = $value3;
+                    $Array1 [] = $value2;
                 }
-            }
-            foreach ($matches1 as $key4 => $value4) {
-
-                foreach ($value4 as $key5 => $value5) {
-                    $Array21 [] = $value5;
+            
+            foreach ($matches1 as $key3 => $value3) {
+                foreach ($value3 as $key => $value) {
+                    # code...
+                     $Array21 [] = $value;
                 }
-            }
+                
+                   
+                }
+            
         }
         
-        $Array2=array_chunk($Array1,2);   
         
+                  
         
-        
-        
-        
-
-
         $dembuoc=count($ArrayStep);
       
-
+        
 
         return view('page.Recipes',[
             'recipe'  =>  $recipe,
@@ -757,7 +755,7 @@ class RecipeController extends Controller
             'ArrayImage'=>$ArrayImage,
             'listrecipe'=> $listrecipe,
             'mangnguyenlieu'=>$mangnguyenlieu,
-            'Array2'=>$Array2,
+            'Array1'=>$Array1,
             'Array21'=>$Array21
         ]);
     }
