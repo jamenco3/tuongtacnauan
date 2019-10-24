@@ -10,10 +10,19 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/','HiHiController@hihi');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/chats', 'ChatsController@getIndex')->name('chats');
+
+Route::get('/messages','ChatsController@fetchMessages');
+
+Route::post('/messages','ChatsController@sendMessages');
+
+
+// Route::get('/', function () {
+// 		broadcast(new WebsocketDemoEvent('some data'));
+//     return view('welcome');
+// });
 
 Route::get('send-message','RedisController@index')->name('tuongtac');
 Route::post('send-message','RedisController@postSendMessage');
@@ -178,3 +187,6 @@ Route::get('recipes/{id}',[
 Route::get('recipess',function(){
 	return view('page.recipess');
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

@@ -27,4 +27,4 @@ class CreateWebSocketsStatisticsEntriesTable extends Migration
     {
         Schema::dropIfExists('websockets_statistics_entries');
     }
-}
+} 
