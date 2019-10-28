@@ -4594,7 +4594,7 @@ input[type=button].btn-block {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-          flex-direction: column;
+          /*flex-direction: column;*/
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;

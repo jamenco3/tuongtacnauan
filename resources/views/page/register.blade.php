@@ -1,6 +1,6 @@
 @extends('master')
 @section('content')
-<div class="inner-header" style="margin-top: 200px">
+<div class="inner-header" style="margin-top: 250px">
 	<div class="container">
 		<div class="pull-left">
 			<h4>Đăng kí thành viên</h4>

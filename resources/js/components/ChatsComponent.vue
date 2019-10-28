@@ -8,7 +8,11 @@
                 <div class="card-body p-0">
                     <ul class="list-unstyle" style="height:300px; overflow-y:scroll;">
                         <li class="p-2" v-for="(message,index) in messages" :key="index">
-                            <strong>{{message.user.name}}</strong> :
+<!--                            <span v-if="message.user">-->
+<!--                            <strong v-if="message.user.name">{{ message.user.name}}</strong>-->
+<!--                            </span>:-->
+<!--                            {{message.message}}-->
+                            <strong>{{message.user.name}}</strong>
                             {{message.message}}
                         </li>
                     </ul>         
@@ -20,7 +24,7 @@
         <div class="col-md-4"> 
             <div class="card card-defalut">
                 <div class="card-header">
-                    Thành viên hoạt động
+                    Hoạt động
                 </div>
                 <div class="card-body">
                     <ul>
@@ -60,12 +64,16 @@
                 })
                 .listen('MessageEvent', (event) => {
                 this.messages.push(event.message);
+                // console.log("Nội dung")
+                // console.log(this.messages)
             });
         },
         methods: {
             fetchMessages(){
                 axios.get('messages').then(response => {
                     this.messages = response.data;
+                    // console.log("Nội dung")
+                     //console.log(this.messages)
                 });
             },
             sendMessage(){

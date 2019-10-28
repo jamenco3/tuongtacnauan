@@ -12,7 +12,7 @@
 */
 Route::get('/','HiHiController@hihi');
 
-Route::get('/chats', 'ChatsController@getIndex')->name('chats');
+Route::get('/chats', 'ChatsController@getIndex')->name('chat');
 
 Route::get('/messages','ChatsController@fetchMessages');
 
@@ -35,11 +35,11 @@ Route::post('send-message','RedisController@postSendMessage');
 // 	return view('admin.login');
 // });
 
-Route::get('admin/dangnhap/','UserController@getDangNhapAdmin')->name('login');
+Route::get('admin/dangnhap/','UserController@getDangNhapAdmin')->name('logins');
 Route::post('admin/dangnhap','UserController@postDangNhapAdmin');
-Route::get('admin/logout','UserController@getDangXuatAdmin')->name('logout');
+Route::get('admin/logout','UserController@getDangXuatAdmin')->name('logouts');
 
-Route::get('admin/dangky/','UserController@getDangKy')->name('register');
+Route::get('admin/dangky/','UserController@getDangKy')->name('registers');
 Route::post('admin/dangky','UserController@postDangKy');
 
 Route::get('doimatkhau/{id}','UserController@getDoiMatKhau')->name('getchangepass');

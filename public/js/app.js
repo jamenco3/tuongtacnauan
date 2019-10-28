@@ -1874,6 +1874,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['user'],
   data: function data() {
@@ -1896,7 +1900,9 @@ __webpack_require__.r(__webpack_exports__);
         return u.id != user.id;
       });
     }).listen('MessageEvent', function (event) {
-      _this.messages.push(event.message);
+      _this.messages.push(event.message); // console.log("Nội dung")
+      // console.log(this.messages)
+
     });
   },
   methods: {
@@ -1904,7 +1910,8 @@ __webpack_require__.r(__webpack_exports__);
       var _this2 = this;
 
       axios.get('messages').then(function (response) {
-        _this2.messages = response.data;
+        _this2.messages = response.data; // console.log("Nội dung")
+        //console.log(this.messages)
       });
     },
     sendMessage: function sendMessage() {
@@ -47068,7 +47075,9 @@ var render = function() {
     _c("div", { staticClass: "col-md-8" }, [
       _c("div", { staticClass: "card card-defalut" }, [
         _c("div", { staticClass: "card-header" }, [
-          _vm._v("\n                Hỗ trợ nấu ăn tương tác\n            ")
+          _vm._v(
+            "\n                    Hỗ trợ nấu ăn tương tác\n                "
+          )
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "card-body p-0" }, [
@@ -47082,9 +47091,9 @@ var render = function() {
               return _c("li", { key: index, staticClass: "p-2" }, [
                 _c("strong", [_vm._v(_vm._s(message.user.name))]),
                 _vm._v(
-                  " :\n                        " +
+                  "\n                            " +
                     _vm._s(message.message) +
-                    "\n                    "
+                    "\n                        "
                 )
               ])
             }),
@@ -47136,7 +47145,7 @@ var render = function() {
     _c("div", { staticClass: "col-md-4" }, [
       _c("div", { staticClass: "card card-defalut" }, [
         _c("div", { staticClass: "card-header" }, [
-          _vm._v("\n                Thành viên hoạt động\n            ")
+          _vm._v("\n                    Hoạt động\n                ")
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "card-body" }, [
@@ -47145,9 +47154,9 @@ var render = function() {
             _vm._l(_vm.users, function(user, index) {
               return _c("li", { key: index, staticClass: "py-2" }, [
                 _vm._v(
-                  "\n                       " +
+                  "\n                           " +
                     _vm._s(user.name) +
-                    "\n                    "
+                    "\n                        "
                 )
               ])
             }),

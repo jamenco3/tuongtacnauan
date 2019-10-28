@@ -39,10 +39,10 @@
                             @endif
                           @if(Auth::check())
                             <li>
-                              <a href="{{ route('logout') }}">Đăng xuất</a>
+                              <a href="{{ route('logouts') }}">Đăng xuất</a>
                             </li>
                             @else
-                              <a href="{{ route('login') }}">Đăng nhập</a>/<a href="{{ route('register') }}">Đăng ký
+                              <a href="{{ route('logins') }}">Đăng nhập</a>/<a href="{{ route('registers') }}">Đăng ký
                             @endif
                         </ul>
                     </div>
@@ -54,14 +54,14 @@
   <div class="row" style="height: 50;">
     <div id="navbar" class="navbar-collapse collapse">
       <ul id="top-menu" class="nav navbar-nav navbar-right mu-main-nav fz">
-        {{-- <li><a href="{{ route('trang-chu') }}"><img style="margin-top: -10px" width="39px" height="39px" src="upload/icon/home.png" alt=""></a></li> --}}
+        <!-- <li><a href="{{ route('trang-chu') }}"><img width="39px" height="39px" src="upload/icon/home.png" alt=""></a></li> -->
         <li><a href="{{ route('trang-chu') }}"><strong>TRANG CHỦ</strong></a></li>
         <li><a href="{{ route('about') }}"><strong>GIỚI THIỆU</strong></a></li>                       
         <li><a href="{{ route('menu') }}"><strong>THỰC ĐƠN</strong></a></li>                       
         <li><a href="{{ route('gallery') }}"><strong>BỘ SƯU TẬP</strong></a></li>
-        @if(Auth::check())
-        <li><a href="{{ route('tuongtac') }}"><strong>HỖ TRỢ NẤU ĂN</strong></a></li> 
-        @endif
+       
+        <li><a href="{{ route('chat') }}"><strong>HỖ TRỢ NẤU ĂN</strong></a></li>
+
         <li><a href="{{ route('contact') }}"><strong>LIÊN HỆ</strong></a></li> 
       </ul>                            
     </div><!--/.nav-collapse -->         
