@@ -12,6 +12,8 @@
 */
 Route::get('/','HiHiController@hihi');
 
+Auth::routes();
+
 Route::get('/chats', 'ChatsController@getIndex')->name('chat');
 
 Route::get('/messages','ChatsController@fetchMessages');

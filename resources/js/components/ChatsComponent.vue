@@ -6,28 +6,29 @@
                     Hỗ trợ nấu ăn tương tác
                 </div>
                 <div class="card-body p-0">
-                    <ul class="list-unstyle" style="height:300px; overflow-y:scroll;">
+                    <ul class="list-unstyle" style="height:300px; overflow-y:scroll; font-size: 14px">
                         <li class="p-2" v-for="(message,index) in messages" :key="index">
 <!--                            <span v-if="message.user">-->
 <!--                            <strong v-if="message.user.name">{{ message.user.name}}</strong>-->
 <!--                            </span>:-->
 <!--                            {{message.message}}-->
-                            <strong>{{message.user.name}}</strong>
-                            {{message.message}}
+                            <strong>{{message.user.name}}</strong> :
+                            {{message.message}} <br>
+                            <span class="pull-right">{{message.created_at}}</span>
                         </li>
-                    </ul>         
+                    </ul>
                 </div>
-                <input type="text" class="form-control" name="message" placeholder="Input the message" v-model="newMessage" @keyup.enter="sendMessage">
+                <input style="height:45px" type="text" class="form-control" name="message" placeholder="Input the message" v-model="newMessage" @keyup.enter="sendMessage">
             </div>
             <span class="text-muted p-0">User is typing...</span>
         </div>
-        <div class="col-md-4"> 
+        <div class="col-md-4">
             <div class="card card-defalut">
                 <div class="card-header">
                     Hoạt động
                 </div>
                 <div class="card-body">
-                    <ul>
+                    <ul style="font-size: 16px">
                         <li class="py-2" v-for="(user,index) in users" :key="index">
                            {{user.name}}
                         </li>

@@ -1878,6 +1878,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['user'],
   data: function data() {
@@ -47085,16 +47086,25 @@ var render = function() {
             "ul",
             {
               staticClass: "list-unstyle",
-              staticStyle: { height: "300px", "overflow-y": "scroll" }
+              staticStyle: {
+                height: "300px",
+                "overflow-y": "scroll",
+                "font-size": "14px"
+              }
             },
             _vm._l(_vm.messages, function(message, index) {
               return _c("li", { key: index, staticClass: "p-2" }, [
                 _c("strong", [_vm._v(_vm._s(message.user.name))]),
                 _vm._v(
-                  "\n                            " +
+                  " :\n                            " +
                     _vm._s(message.message) +
-                    "\n                        "
-                )
+                    " "
+                ),
+                _c("br"),
+                _vm._v(" "),
+                _c("span", { staticClass: "pull-right" }, [
+                  _vm._v(_vm._s(message.created_at))
+                ])
               ])
             }),
             0
@@ -47111,6 +47121,7 @@ var render = function() {
             }
           ],
           staticClass: "form-control",
+          staticStyle: { height: "45px" },
           attrs: {
             type: "text",
             name: "message",
@@ -47151,6 +47162,7 @@ var render = function() {
         _c("div", { staticClass: "card-body" }, [
           _c(
             "ul",
+            { staticStyle: { "font-size": "16px" } },
             _vm._l(_vm.users, function(user, index) {
               return _c("li", { key: index, staticClass: "py-2" }, [
                 _vm._v(
