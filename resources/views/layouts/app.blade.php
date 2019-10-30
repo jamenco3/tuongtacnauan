@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Tương tác nấu ăn') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -23,10 +23,11 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                <a class="navbar-brand" href="{{route('trang-chu')}}">
+                    <!-- {{ config('app.name', 'Tương tác nấu ăn') }}Quay lại trang chủ -->
+                    <a href="{{ route('trang-chu') }}"><img width="39px" height="39px" src="upload/icon/home.png" alt=""></a>
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Hỗ trợ nấu ăn tương tToggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -54,7 +55,7 @@
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <!-- <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -64,7 +65,7 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
-                                </div>
+                                </div> -->
                             </li>
                         @endguest
                     </ul>
@@ -75,6 +76,87 @@
         <main class="py-4">
             @yield('content')
         </main>
+            <footer id="mu-footer">
+            <div class="container">
+                <div class="row">
+                <div class="col-md-12">
+                <div class="mu-footer-area">
+                    <div class="mu-footer-social">
+                    <a href="https://www.facebook.com"><img  style="border-radius:50%; width:45px; height:45px" src="upload/logo/facebook.png" alt=""></a>
+                    <a href="https://twitter.com"><img style="border-radius:50%; width:45px; height:45px" src="upload/logo/twitter.png" alt=""></a>
+                    <a href="https://google.com"><img style="border-radius:50%;width:45px; height:45px" src="upload/logo/google.png" alt=""></a>
+                    <a href="https://linkedin.com/"><img style="border-radius:50%;width:45px; height:45px" src="upload/logo/linkedin.png" alt=""></a>
+                    <a href="https://youtube.com/"><img style="border-radius:50%;width:45px; height:45px" src="upload/logo/youtube.png" alt=""></a>
+                    </div>
+                    <div class="mu-footer-copyright">
+                    <p>&copy; Copyright <a rel="nofollow" href="http://markups.io">MonNgon365</a>. All right reserved.</p>
+                    </div>         
+                </div>
+                </div>
+                </div>
+            </div>
+            </footer>
     </div>
 </body>
 </html>
+
+<style>
+    #mu-footer {
+  background-color: #444;
+  display: inline;
+  float: left;
+  padding: 50px 0;
+  width: 100%;
+}
+
+.mu-footer-area {
+  display: inline;
+  float: left;
+  width: 100%;
+  text-align: center;
+}
+
+.mu-footer-social {
+  display: inline;
+  float: left;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.mu-footer-social a {
+  background-color: #555;
+  border-radius: 50%;
+  color: #fff;
+  display: inline-block;
+  font-size: 20px;
+  height: 45px;
+  line-height: 47px;
+  margin: 5px;
+  text-align: center;
+  width: 45px;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.mu-footer-copyright {
+  display: inline;
+  float: left;
+  width: 100%;
+}
+
+.mu-footer-copyright p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  color: #fff;
+}
+
+.mu-footer-copyright p a {
+  color: #fff;
+}
+
+</style>

@@ -404,7 +404,7 @@
     box-sizing: border-box;
     clear: both;
     color: rgb(29, 33, 41);
-    content: '"' '"';
+    /* content: '"' '"'; */
     display: table;
     height: 0px;
     text-decoration: none solid rgb(29, 33, 41);

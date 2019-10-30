@@ -49,7 +49,7 @@
 					</div>
 
 					<span class="login100-form-title p-t-20 p-b-45">
-						John Doe
+						Đăng nhập
 					</span>
 
 					<div class="wrap-input100 validate-input m-b-10" data-validate = "Username is required">
@@ -81,8 +81,8 @@
 					</div> --}}
 
 					<div class="text-center w-full">
-						<a class="txt1" href="{{ route('register') }}">
-							Create new account
+						<a class="txt1" href="{{ route('registers') }}">
+							Tạo tài khoản mới
 							<i class="fa fa-long-arrow-right"></i>						
 						</a>
 					</div>

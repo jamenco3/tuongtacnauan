@@ -16,11 +16,18 @@
                     </div>
                     <div class="header_account" style="margin-top: -15px">
                         <ul>
+                            @if(Auth::check())
+                            <li>
+                              <a href="{{ route('logouts') }}">Đăng xuất</a>
+                            </li>
+                            @else
+                              <a href="{{ route('logins') }}">Đăng nhập</a>/<a href="{{ route('registers') }}">Đăng ký
+                            @endif
                             <li class="wishlist">
-                              <a href="wishlist.html"><i class="icon ion-clipboard"></i> Wishlist </a>
+                              <a href="wishlist.html"><i class="icon ion-clipboard"></i>  </a>
                             </li>  
                             @if(Auth::check())                          
-                            <li class="top_links"><a href="#"><i class="ion-gear-a"></i> Trang quản lý<i class="ion-chevron-down"></i></a>                        
+                            <li class="top_links"><a href="#"> Trang quản lý<i class="ion-chevron-down"></i></a>                        
                                 <ul class="dropdown_links">
                                     @if(Auth::user()->role == 1)
                                     <li>
@@ -33,17 +40,10 @@
                                     <li><a href="{{ route('get-thong-tin-ca-nhan',Auth::user()->id) }}">Thông tin cá nhân </a></li>
                                     <li><a href="{{ route('getchangepass',Auth::user()->id) }}">Đổi mật khẩu</a></li>
                                     {{-- <li><a href="wishlist.html">Wishlist</a></li> --}}
-                                    @endif
+                                    @endif                                   
                                 </ul>
                             </li>
-                            @endif
-                          @if(Auth::check())
-                            <li>
-                              <a href="{{ route('logouts') }}">Đăng xuất</a>
-                            </li>
-                            @else
-                              <a href="{{ route('logins') }}">Đăng nhập</a>/<a href="{{ route('registers') }}">Đăng ký
-                            @endif
+                            @endif                        
                         </ul>
                     </div>
                 </div>   

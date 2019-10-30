@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-md-8">
             <div class="card card-defalut">
-                <div class="card-header">
+                <div class="card-header" style="background: #00c6fb">
                     Hỗ trợ nấu ăn tương tác
                 </div>
                 <div class="card-body p-0">
@@ -15,6 +15,7 @@
                             <strong>{{message.user.name}}</strong> :
                             {{message.message}} <br>
                             <span class="pull-right">{{message.created_at}}</span>
+                            <hr>
                         </li>
                     </ul>
                 </div>
@@ -24,13 +25,16 @@
         </div>
         <div class="col-md-4">
             <div class="card card-defalut">
-                <div class="card-header">
+                <div class="card-header" style="background: #00c6fb">
                     Hoạt động
                 </div>
-                <div class="card-body">
+                <div class="card-body" style="height: 350px; background:#ecf0f1">
                     <ul style="font-size: 16px">
-                        <li class="py-2" v-for="(user,index) in users" :key="index">
-                           {{user.name}}
+                        <li style="border: 1px solid #ecf0f1" class="py-2" v-for="(user,index) in users" :key="index">
+                           {{user.name}} -
+                            <span style="color: orange" v-if="user.role===3">Chuyên gia</span>
+                            <span v-else>Thành viên</span><br>
+                            <hr>
                         </li>
                     </ul>
                 </div>

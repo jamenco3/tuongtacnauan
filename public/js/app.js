@@ -1879,6 +1879,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['user'],
   data: function data() {
@@ -47075,11 +47079,18 @@ var render = function() {
   return _c("div", { staticClass: "row" }, [
     _c("div", { staticClass: "col-md-8" }, [
       _c("div", { staticClass: "card card-defalut" }, [
-        _c("div", { staticClass: "card-header" }, [
-          _vm._v(
-            "\n                    Hỗ trợ nấu ăn tương tác\n                "
-          )
-        ]),
+        _c(
+          "div",
+          {
+            staticClass: "card-header",
+            staticStyle: { background: "#00c6fb" }
+          },
+          [
+            _vm._v(
+              "\n                    Hỗ trợ nấu ăn tương tác\n                "
+            )
+          ]
+        ),
         _vm._v(" "),
         _c("div", { staticClass: "card-body p-0" }, [
           _c(
@@ -47104,7 +47115,9 @@ var render = function() {
                 _vm._v(" "),
                 _c("span", { staticClass: "pull-right" }, [
                   _vm._v(_vm._s(message.created_at))
-                ])
+                ]),
+                _vm._v(" "),
+                _c("hr")
               ])
             }),
             0
@@ -47155,26 +47168,54 @@ var render = function() {
     _vm._v(" "),
     _c("div", { staticClass: "col-md-4" }, [
       _c("div", { staticClass: "card card-defalut" }, [
-        _c("div", { staticClass: "card-header" }, [
-          _vm._v("\n                    Hoạt động\n                ")
-        ]),
+        _c(
+          "div",
+          {
+            staticClass: "card-header",
+            staticStyle: { background: "#00c6fb" }
+          },
+          [_vm._v("\n                    Hoạt động\n                ")]
+        ),
         _vm._v(" "),
-        _c("div", { staticClass: "card-body" }, [
-          _c(
-            "ul",
-            { staticStyle: { "font-size": "16px" } },
-            _vm._l(_vm.users, function(user, index) {
-              return _c("li", { key: index, staticClass: "py-2" }, [
-                _vm._v(
-                  "\n                           " +
-                    _vm._s(user.name) +
-                    "\n                        "
+        _c(
+          "div",
+          {
+            staticClass: "card-body",
+            staticStyle: { height: "350px", background: "#ecf0f1" }
+          },
+          [
+            _c(
+              "ul",
+              { staticStyle: { "font-size": "16px" } },
+              _vm._l(_vm.users, function(user, index) {
+                return _c(
+                  "li",
+                  {
+                    key: index,
+                    staticClass: "py-2",
+                    staticStyle: { border: "1px solid #ecf0f1" }
+                  },
+                  [
+                    _vm._v(
+                      "\n                           " +
+                        _vm._s(user.name) +
+                        " -\n                            "
+                    ),
+                    user.role === 3
+                      ? _c("span", { staticStyle: { color: "orange" } }, [
+                          _vm._v("Chuyên gia")
+                        ])
+                      : _c("span", [_vm._v("Thành viên")]),
+                    _c("br"),
+                    _vm._v(" "),
+                    _c("hr")
+                  ]
                 )
-              ])
-            }),
-            0
-          )
-        ])
+              }),
+              0
+            )
+          ]
+        )
       ])
     ])
   ])
