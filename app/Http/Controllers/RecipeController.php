@@ -429,7 +429,11 @@ class RecipeController extends Controller
     public function getPost(){
         $category = Category::where('status',1)->get();
         $dish = Dish::where('status',1)->get();
-        return view('page.post',['category'=>$category,'dish'=>$dish]);
+        if(Auth::check())
+            return view('page.post',['category'=>$category,'dish'=>$dish]);
+        else{
+            return view('admin.login');
+        }
     }
 
      public function post(Request $request){

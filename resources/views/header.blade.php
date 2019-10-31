@@ -97,7 +97,7 @@
         <div class="col-md-5 login-box" >       
           <div class="row col-md-10">
             <div class="postRecipe col-md-6">
-              <a href="{{route('post')}}">
+              <a href="{{route('post')}}" onclick="myFunction()">
                 <div style="margin-top: 5px;">
                   <img width="30px"; height="30px" src="upload/logo/post.png" alt=""> Đăng công thức
                 </div>
@@ -131,3 +131,10 @@
      
   </nav> 
 </header>
+
+<script>
+    function myFunction() {
+
+        alert("Bạn cần đăng nhập trước khi đăng bài");
+    }
+</script>

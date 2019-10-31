@@ -10,15 +10,15 @@
                 <ul class="nav pull-right">
                     @if(Auth::check())
                     <li class="dropdown">
-                        <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-user"></i> {{Auth::user()->name}} <i class="caret"></i>
+                        <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"><img style="border-radius: 50%" width="25px" height="25px" src="upload/avatar/{{Auth::user()->avatar}}" alt=""> {{Auth::user()->name}} <i class="caret"></i>
                         </a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a tabindex="-1" href="#">Cá nhân</a>
+                                <a tabindex="-1" href="{{ route('get-thong-tin-ca-nhan',Auth::user()->id) }}">Cá nhân</a>
                             </li>
                             <li class="divider"></li>
                             <li>
-                                <a tabindex="-1" href="{{ route('logout') }}">Logout</a>
+                                <a tabindex="-1" href="{{ route('logouts') }}">Đăng xuất</a>
                             </li>
                         </ul>
                     </li>
@@ -40,9 +40,9 @@
                 </ul>
                 <ul class="nav">
                     <li class="active">
-                        <a href="admin/category/list?active=category">Dashboard</a>
-                    {{-- </li>
-                    <li class="dropdown">
+                        <a href="admin/category/list?active=category">Trang quản trị</a>
+                     </li>
+                    {{--<li class="dropdown">
                         <a href="#" data-toggle="dropdown" class="dropdown-toggle">Settings <b class="caret"></b>
 
                         </a>

@@ -1883,13 +1883,24 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['user'],
   data: function data() {
     return {
       messages: [],
       newMessage: '',
-      users: []
+      users: [],
+      activeUser: false,
+      typingTimer: false
     };
   },
   created: function created() {
@@ -1905,9 +1916,19 @@ __webpack_require__.r(__webpack_exports__);
         return u.id != user.id;
       });
     }).listen('MessageEvent', function (event) {
-      _this.messages.push(event.message); // console.log("Nội dung")
-      // console.log(this.messages)
+      _this.messages.push(event.message); // console.log("Nội dung");
+      // console.log(this.messages);
 
+    }).listenForWhisper('typing', function (user) {
+      _this.activeUser = user;
+
+      if (_this.typingTimer) {
+        clearTimeout(_this.typingTimer);
+      }
+
+      _this.typingTimer = setTimeout(function () {
+        _this.activeUser = false;
+      }, 3000);
     });
   },
   methods: {
@@ -1928,6 +1949,9 @@ __webpack_require__.r(__webpack_exports__);
         message: this.newMessage
       });
       this.newMessage = "";
+    },
+    sendTypingEvent: function sendTypingEvent() {
+      Echo.join('chat').whisper('typing', this.user);
     }
   }
 });
@@ -47061,6 +47085,94 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 
 /***/ }),
 
+/***/ "./node_modules/vue-chat-scroll/dist/vue-chat-scroll.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/vue-chat-scroll/dist/vue-chat-scroll.js ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+(function (global, factory) {
+	 true ? module.exports = factory() :
+	undefined;
+}(this, (function () { 'use strict';
+
+/**
+* @name VueJS vChatScroll (vue-chat-scroll)
+* @description Monitors an element and scrolls to the bottom if a new child is added
+* @author Theodore Messinezis <theo@theomessin.com>
+* @file v-chat-scroll  directive definition
+*/
+
+var scrollToBottom = function scrollToBottom(el, smooth) {
+  if (typeof el.scroll === "function") {
+    el.scroll({
+      top: el.scrollHeight,
+      behavior: smooth ? 'smooth' : 'instant'
+    });
+  } else {
+    el.scrollTop = el.scrollHeight;
+  }
+};
+
+var vChatScroll = {
+  bind: function bind(el, binding) {
+    var scrolled = false;
+
+    el.addEventListener('scroll', function (e) {
+      scrolled = el.scrollTop + el.clientHeight + 1 < el.scrollHeight;
+    });
+
+    new MutationObserver(function (e) {
+      var config = binding.value || {};
+      var pause = config.always === false && scrolled;
+      var addedNodes = e[e.length - 1].addedNodes.length;
+      var removedNodes = e[e.length - 1].removedNodes.length;
+
+      if (config.scrollonremoved) {
+        if (pause || addedNodes != 1 && removedNodes != 1) return;
+      } else {
+        if (pause || addedNodes != 1) return;
+      }
+
+      var smooth = config.smooth;
+      var loadingRemoved = !addedNodes && removedNodes === 1;
+      if (loadingRemoved && config.scrollonremoved && 'smoothonremoved' in config) {
+        smooth = config.smoothonremoved;
+      }
+      scrollToBottom(el, smooth);
+    }).observe(el, { childList: true, subtree: true });
+  },
+  inserted: function inserted(el, binding) {
+    var config = binding.value || {};
+    scrollToBottom(el, config.smooth);
+  }
+};
+
+/**
+* @name VueJS vChatScroll (vue-chat-scroll)
+* @description Monitors an element and scrolls to the bottom if a new child is added
+* @author Theodore Messinezis <theo@theomessin.com>
+* @file vue-chat-scroll plugin definition
+*/
+
+var VueChatScroll = {
+  install: function install(Vue, options) {
+    Vue.directive('chat-scroll', vChatScroll);
+  }
+};
+
+if (typeof window !== 'undefined' && window.Vue) {
+  window.Vue.use(VueChatScroll);
+}
+
+return VueChatScroll;
+
+})));
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ChatsComponent.vue?vue&type=template&id=2bb55d4d&":
 /*!*****************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ChatsComponent.vue?vue&type=template&id=2bb55d4d& ***!
@@ -47079,23 +47191,13 @@ var render = function() {
   return _c("div", { staticClass: "row" }, [
     _c("div", { staticClass: "col-md-8" }, [
       _c("div", { staticClass: "card card-defalut" }, [
-        _c(
-          "div",
-          {
-            staticClass: "card-header",
-            staticStyle: { background: "#00c6fb" }
-          },
-          [
-            _vm._v(
-              "\n                    Hỗ trợ nấu ăn tương tác\n                "
-            )
-          ]
-        ),
+        _vm._m(0),
         _vm._v(" "),
         _c("div", { staticClass: "card-body p-0" }, [
           _c(
             "ul",
             {
+              directives: [{ name: "chat-scroll", rawName: "v-chat-scroll" }],
               staticClass: "list-unstyle",
               staticStyle: {
                 height: "300px",
@@ -47105,6 +47207,15 @@ var render = function() {
             },
             _vm._l(_vm.messages, function(message, index) {
               return _c("li", { key: index, staticClass: "p-2" }, [
+                _vm.activeUser.role == 3
+                  ? _c("p", [
+                      _c("strong", { staticStyle: { color: "red" } }, [
+                        _vm._v(_vm._s(message.user.name))
+                      ]),
+                      _vm._v(" :")
+                    ])
+                  : _vm._e(),
+                _vm._v(" "),
                 _c("strong", [_vm._v(_vm._s(message.user.name))]),
                 _vm._v(
                   " :\n                            " +
@@ -47135,13 +47246,10 @@ var render = function() {
           ],
           staticClass: "form-control",
           staticStyle: { height: "45px" },
-          attrs: {
-            type: "text",
-            name: "message",
-            placeholder: "Input the message"
-          },
+          attrs: { type: "text", name: "message", placeholder: "Nhập ..." },
           domProps: { value: _vm.newMessage },
           on: {
+            keydown: _vm.sendTypingEvent,
             keyup: function($event) {
               if (
                 !$event.type.indexOf("key") &&
@@ -47161,9 +47269,11 @@ var render = function() {
         })
       ]),
       _vm._v(" "),
-      _c("span", { staticClass: "text-muted p-0" }, [
-        _vm._v("User is typing...")
-      ])
+      _vm.activeUser
+        ? _c("span", { staticClass: "text-muted p-0" }, [
+            _vm._v(_vm._s(_vm.activeUser.name) + " đang nhập...")
+          ])
+        : _vm._e()
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "col-md-4" }, [
@@ -47202,7 +47312,7 @@ var render = function() {
                         " -\n                            "
                     ),
                     user.role === 3
-                      ? _c("span", { staticStyle: { color: "orange" } }, [
+                      ? _c("span", { staticStyle: { color: "#ff7979" } }, [
                           _vm._v("Chuyên gia")
                         ])
                       : _c("span", [_vm._v("Thành viên")]),
@@ -47220,7 +47330,22 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "card-header", staticStyle: { background: "#00c6fb" } },
+      [
+        _c("strong", { staticStyle: { "font-size": "18px" } }, [
+          _vm._v("Hỗ trợ nấu ăn tương tác")
+        ])
+      ]
+    )
+  }
+]
 render._withStripped = true
 
 
@@ -59367,9 +59492,13 @@ module.exports = function(module) {
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
   \*****************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vue_chat_scroll__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-chat-scroll */ "./node_modules/vue-chat-scroll/dist/vue-chat-scroll.js");
+/* harmony import */ var vue_chat_scroll__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue_chat_scroll__WEBPACK_IMPORTED_MODULE_0__);
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -59378,6 +59507,8 @@ module.exports = function(module) {
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
+
+Vue.use(vue_chat_scroll__WEBPACK_IMPORTED_MODULE_0___default.a);
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue

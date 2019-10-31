@@ -148,7 +148,7 @@ Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){
 
 
 
-Route::get('index',[
+Route::get('trang-chu',[
 	'as'=>'trang-chu',
 	'uses'=>'PageController@getIndex'
 ]);

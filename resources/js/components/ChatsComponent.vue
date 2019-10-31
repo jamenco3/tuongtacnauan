@@ -3,15 +3,16 @@
         <div class="col-md-8">
             <div class="card card-defalut">
                 <div class="card-header" style="background: #00c6fb">
-                    Hỗ trợ nấu ăn tương tác
+                    <strong style="font-size:18px">Hỗ trợ nấu ăn tương tác</strong>
                 </div>
                 <div class="card-body p-0">
-                    <ul class="list-unstyle" style="height:300px; overflow-y:scroll; font-size: 14px">
+                    <ul class="list-unstyle" style="height:300px; overflow-y:scroll; font-size: 14px" v-chat-scroll>
                         <li class="p-2" v-for="(message,index) in messages" :key="index">
 <!--                            <span v-if="message.user">-->
 <!--                            <strong v-if="message.user.name">{{ message.user.name}}</strong>-->
 <!--                            </span>:-->
 <!--                            {{message.message}}-->
+                            <p v-if="activeUser.role == 3"><strong style="color: red;">{{message.user.name}}</strong> :</p>
                             <strong>{{message.user.name}}</strong> :
                             {{message.message}} <br>
                             <span class="pull-right">{{message.created_at}}</span>
@@ -19,9 +20,17 @@
                         </li>
                     </ul>
                 </div>
-                <input style="height:45px" type="text" class="form-control" name="message" placeholder="Input the message" v-model="newMessage" @keyup.enter="sendMessage">
+                <input
+                        @keydown="sendTypingEvent"
+                        @keyup.enter="sendMessage"
+                        v-model="newMessage"
+                        type="text"
+                        name="message"
+                        placeholder="Nhập ..."
+                        class="form-control"
+                        style="height:45px">
             </div>
-            <span class="text-muted p-0">User is typing...</span>
+            <span class="text-muted p-0" v-if="activeUser">{{activeUser.name}} đang nhập...</span>
         </div>
         <div class="col-md-4">
             <div class="card card-defalut">
@@ -32,7 +41,7 @@
                     <ul style="font-size: 16px">
                         <li style="border: 1px solid #ecf0f1" class="py-2" v-for="(user,index) in users" :key="index">
                            {{user.name}} -
-                            <span style="color: orange" v-if="user.role===3">Chuyên gia</span>
+                            <span style="color: #ff7979" v-if="user.role===3">Chuyên gia</span>
                             <span v-else>Thành viên</span><br>
                             <hr>
                         </li>
@@ -52,6 +61,8 @@
                 messages: [],
                 newMessage: '',
                 users: [],
+                activeUser:false,
+                typingTimer:false,
             }
         },
         created(){
@@ -68,10 +79,20 @@
                     this.users= this.users.filter(u=>u.id != user.id);
                 })
                 .listen('MessageEvent', (event) => {
-                this.messages.push(event.message);
-                // console.log("Nội dung")
-                // console.log(this.messages)
-            });
+                    this.messages.push(event.message);
+                    // console.log("Nội dung");
+                    // console.log(this.messages);
+                })
+                .listenForWhisper('typing', user => {
+                    this.activeUser = user;
+
+                    if(this.typingTimer){
+                        clearTimeout(this.typingTimer);
+                    }
+                    this.typingTimer = setTimeout(()=>{
+                        this.activeUser = false
+                    },3000);
+                })
         },
         methods: {
             fetchMessages(){
@@ -81,6 +102,7 @@
                      //console.log(this.messages)
                 });
             },
+
             sendMessage(){
                 this.messages.push({
                     user: this.user,
@@ -89,6 +111,11 @@
 
                 axios.post('messages',{message: this.newMessage});
                 this.newMessage="";
+            },
+
+            sendTypingEvent(){
+                Echo.join('chat')
+                    .whisper('typing', this.user);
             }
         }
     }

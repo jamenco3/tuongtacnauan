@@ -215,7 +215,7 @@
                       </div>
                       
                         <div class="form-actions" style="margin-top: 30px">
-                          <button type="submit" class="btn btn-primary">Thêm</button>
+                          <button type="submit"  class="btn btn-primary">Đăng bài</button>
                           <button type="reset" class="btn">Cancel</button>
                         </div>
                       </fieldset>
@@ -334,4 +334,9 @@
   
 }
 </script>
+    <script>
+        function myFunction() {
+            alert("Bạn cần đăng nhập trước khi đăng bài");
+        }
+    </script>
 @endsection
