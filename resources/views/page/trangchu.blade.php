@@ -21,7 +21,7 @@
                 <i class="fas fa-search"></i>
               </span>
               <input type="text" name="" value="" class="form-control" placeholder="Ví dụ: kim chi, cupcake, soup, sinh tố..">
-            </div>       
+            </div>
             <p></p>           
             {{-- <a href="#mu-reservation" class="mu-readmore-btn mu-reservation-btn">BOOK A TABLE</a> --}}
           </div>

@@ -64,6 +64,7 @@
   <script type="text/javascript" src="sources/assets/js/bootstrap-datepicker.js"></script> 
   <!-- Ajax contact form  -->
   <script type="text/javascript" src="sources/assets/js/app.js"></script>
+
   @yield('script')
   <!-- Custom js -->
   <script src="sources/assets/js/custom.js"></script> 

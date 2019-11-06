@@ -18,7 +18,7 @@
               <li class="col-md-3 col-sm-3 col-xs-12">
                 <div class="mu-single-counter">
                   <h2>Ngon miệng</h2>
-                  <h3><span class="counter-value" data-count="600">0</span><sup>+</sup></h3>
+                  <h3><span class="counter-value" data-count="5990">0</span><sup>+</sup></h3>
                   <p>Bữa trưa</p>
                 </div>
               </li>
@@ -26,8 +26,8 @@
                <li class="col-md-3 col-sm-3 col-xs-12">
                 <div class="mu-single-counter">
                   <h2>Thu hút</h2>
-                   <h3><span class="counter-value" data-count="450">0</span><sup>+</sup></h3>
-                  <p>Coffe</p>
+                   <h3><span class="counter-value" data-count="4500">0</span><sup>+</sup></h3>
+                  <p>Thành viên</p>
                 </div>
               </li>
 

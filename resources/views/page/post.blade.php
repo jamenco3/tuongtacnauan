@@ -1,6 +1,6 @@
 @extends('master')
 @section('content')
-<div class="container" id="content" style="margin-top: 50px; margin-bottom:200px; border: 1px solid black; background-color: #c9d426">     
+<div class="container postRe" id="content">
     <div class="inner-header" style="margin-top: 200px">
 	<div class="container">
     <div class="pull-right">
@@ -234,7 +234,7 @@
                         </div>     
                       </div>
 
-                        <div class="form-actions" style="margin-top: 30px">
+                        <div class="form-actions" style="margin-top: 30px; margin-bottom: 50px">
                           <button type="submit"  class="btn btn-primary">Đăng bài</button>
                           <button type="reset" class="btn">Cancel</button>
                         </div>
@@ -250,17 +250,17 @@
 @endsection
 
 @section('script')
-    
-    <script>    
+
+    <script>
         $(document).ready(function(){
             $("#Category").change(function(){
                 var id_category = $(this).val();
                 $.get("dish/"+id_category,function(data){
-                    $("#Dish").html(data);  
+                    $("#Dish").html(data);
                 });
                 // alert(id_theloai);
             });
-        }); 
+        });
     </script>
     <script>
         function hd() {
@@ -300,7 +300,7 @@
       b1.style.display = "none";
       b2.style.display = "block";
     }
-  
+
 }
 </script>
 <script>
@@ -314,7 +314,7 @@
       b2.style.display = "none";
       b3.style.display = "block";
     }
-  
+
 }
 </script>
 <script>
@@ -328,7 +328,7 @@
       b3.style.display = "none";
       b4.style.display = "block";
     }
-  
+
 }
 </script>
 <script>
@@ -342,7 +342,7 @@
       b4.style.display = "none";
       b5.style.display = "block";
     }
-  
+
 }
 </script>
 <script>
@@ -356,7 +356,7 @@
       b5.style.display = "none";
       b6.style.display = "block";
     }
-  
+
 }
 </script>
 <script>
@@ -370,7 +370,7 @@
       b6.style.display = "none";
       b7.style.display = "block";
     }
-  
+
 }
 </script>
     <script>

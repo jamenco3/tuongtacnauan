@@ -27,7 +27,7 @@
 */
 
 body {
-  background-color: #ffffff;
+  background-color: #F2F3F5;
   font-family: "Prata", serif;
   color: #333333;
   font-size: 15px;
@@ -2309,3 +2309,14 @@ RESERVATION SECTION
   background: #00c6fb;
 }
 
+#guide{
+  border: 0.5px solid #ddd;
+  background: #0e90d2;
+}
+
+.postRe{
+  margin-top: 50px;
+  margin-bottom:200px;
+  border: 0.5px solid black;
+  background-color: #e9ebee;
+}
