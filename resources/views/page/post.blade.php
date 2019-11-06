@@ -16,7 +16,7 @@
         <div class="block">
             <div class="block-content collapse in">
                 <div class="span12">
-                    <form action="page.post" class="form-horizontal" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('postRecipes')}}" class="form-horizontal" method="POST" enctype="multipart/form-data">
                       @if(count($errors)>0)   
                           <div class="alert alert-danger">
                               @foreach($errors->all() as $err)
@@ -78,6 +78,26 @@
                           <div class="controls">
                             <textarea name="materials" class="input-xlarge textarea" placeholder="Các nguyên liệu" style="width: 810px; height: 200px"></textarea>
                           </div>
+                            <button class="btn btn-success pull-right" onclick="hd()" type="button" id="btnh" style="display:block">Xem hướng dẫn nhập</button>
+                            <button class="btn btn-success pull-right" onclick="understand()" type="button" id="btnu" style="display:none">Đã hiểu</button>
+                            <div id="guide" style="display: none">
+                                <p>gợi ý: </p>
+                                <ul>
+                                    <li>Quy cách nhập: tên_nguyên_liệu định_lượng đơn_vị_tính ghi_chú </li>
+                                    <li>tên_nguyên_liệu: tên nguyên liệu, định_lượng: số lượng,đơn vị_tính: gram,lít,cái,...,ghi chú: diễn giải... </li>
+                                    <li>Nhập 1 nguyên liệu trên cùng 1 dòng:
+                                        <ul>
+                                            <li>*ví dụ: thịt gà 100gr (ghi chú)</li>
+                                        </ul>
+                                    </li>
+                                    <li>Nhập nhiều nguyên liệu trên cùng 1 dòng
+                                        <ul>
+                                            <li>*nhập nguyên liệu cách nhau bằng dấu (,)</li>
+                                            <li>*ví dụ: gà 1/4 con , trái ớt 3 quả, nước 1 lít</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
                         </div> 
                         <div class="control-group">
                           <label class="control-label" for="select01">Độ khó</label>
@@ -213,7 +233,7 @@
                           </div>
                         </div>     
                       </div>
-                      
+
                         <div class="form-actions" style="margin-top: 30px">
                           <button type="submit"  class="btn btn-primary">Đăng bài</button>
                           <button type="reset" class="btn">Cancel</button>
@@ -230,6 +250,7 @@
 @endsection
 
 @section('script')
+    
     <script>    
         $(document).ready(function(){
             $("#Category").change(function(){
@@ -242,19 +263,37 @@
         }); 
     </script>
     <script>
+        function hd() {
+            var dh = document.getElementById("guide");
+            var bh = document.getElementById("btnh");
+            var bu = document.getElementById("btnu");
+
+            if (dh.style.display === "none") {
+                dh.style.display = "block";
+                bh.style.display = "none";
+                bu.style.display = "block";
+            }
+
+        }
+    </script>
+    <script>
+        function understand() {
+            var dh = document.getElementById("guide");
+            var bh = document.getElementById("btnh");
+            var bu = document.getElementById("btnu");
+
+            if (dh.style.display === "block") {
+                dh.style.display = "none";
+                bh.style.display = "block";
+                bu.style.display = "none";
+            }
+        }
+    </script>
+    <script>
     function myFunction1() {
     var d1 = document.getElementById("myDIV1");
     var b1 = document.getElementById("btn1");
     var b2 = document.getElementById("btn2");
-
-
-    // if (x.style.display === "none") {
-    //   x.style.display = "block";
-    //   y.style.display = "none";
-    //   z.style.display = "block";
-    // } else {
-    //   x.style.display = "none";
-    // }
 
     if (d1.style.display === "none") {
       d1.style.display = "block";

@@ -31,6 +31,7 @@
                         style="height:45px">
             </div>
             <span class="text-muted p-0" v-if="activeUser">{{activeUser.name}} đang nhập...</span>
+            <button v-on:click="sendMessage" style="width: 80px" type="button" class="btn btn-success">Gửi đi</button>
         </div>
         <div class="col-md-4">
             <div class="card card-defalut">

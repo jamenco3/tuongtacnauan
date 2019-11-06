@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html> 
     <head>
-        <title>Doashboard</title>
+        <title>Món ngon 365 |Trang quản trị</title>
         <base href="{{ asset('')}}">
         <!-- Bootstrap -->
         <link href="source/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">

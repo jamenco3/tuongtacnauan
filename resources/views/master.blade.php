@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">    
-    <title> @yield('title')Món ngon mỗi ngày | Trang chủ</title>
+    <title> @yield('title')Món ngon 365 | Trang chủ</title>
     <base href="{{ asset('')}}">
 
     <!-- Favicon -->
@@ -49,7 +49,7 @@
   <!-- Start Footer -->
   @include('footer')
   <!-- End Footer -->
-  
+
   <!-- jQuery library -->
   <script src="sources/assets/js/jquery.min.js"></script>  
   <!-- Include all compiled plugins (below), or include individual files as needed -->

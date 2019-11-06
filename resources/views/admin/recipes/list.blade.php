@@ -70,15 +70,20 @@
 	                            @endif
 	                        </td>
 	                        @if($re->status == 1)
-                            	<td style="color: green">Tồn tại</td>
+                            	<td style="color: green">Đã duyệt</td>
                         	@else
-                            	<td style="color: red">Không tồn tại</td>
+                            	<td style="color: red">Chưa duyệt</td>
                         	@endif
 	                        <td class="center">
 	                        	@if($re->status ==0)
-	                        	<button class="btn btn-default btn-danger"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/recipes/delete/{{ $re->id }}">Khôi phục</a></button><br>
+	                        	<button class="btn btn-default btn-danger"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/recipes/delete/{{ $re->id }}">Duyệt bài</a></button><br>
 	                        	@else
-                            	<button class="btn btn-default "><i class="fa fa-trash-o  fa-fw"></i><a href="admin/recipes/delete/{{ $re->id }}">Xóa</a></button><br>
+                            	<button class="btn btn-default "><i class="fa fa-trash-o  fa-fw"></i><a href="admin/recipes/delete/{{ $re->id }}">
+										@if($re->status == 1) Xóa
+											@else
+												Duyệt
+											@endif
+									</a></button><br>
                             	@endif
                             <button class="btn btn-default">
                             <i class="fa fa-pencil fa-fw"></i> <a href="admin/recipes/edit/{{ $re->id }}">Sửa</a>

@@ -90,6 +90,8 @@
                     </div>
                     <div class="mu-footer-copyright">
                     <p>&copy; Copyright <a rel="nofollow" href="http://markups.io">MonNgon365</a>. All right reserved.</p>
+                        <p> Trường Đại Học Công Nghiệp Hà Nội</p>
+                        <p> Nguyễn Văn Trưởng - Trương Minh Hiếu - Đoàn Thị Linh</p>
                     </div>         
                 </div>
                 </div>

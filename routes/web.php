@@ -51,7 +51,7 @@ Route::get('thong-tin-ca-nhan/{id}','UserController@getThongTinCaNhan')->name('g
 Route::post('thong-tin-ca-nhan/{id}','UserController@postThongTinCaNhan')->name('post-thong-tin-ca-nhan');
 
 Route::get('post','RecipeController@getPost')->name('post');
-Route::post('post','RecipeController@post');
+Route::post('post','RecipeController@post')->name('postRecipes');
 
 Route::get('dish/{id_category}','AjaxController@getDish'); 
 

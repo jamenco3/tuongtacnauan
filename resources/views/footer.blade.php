@@ -11,7 +11,9 @@
           <a href="https://youtube.com/"><img style="border-radius:50%;" src="upload/logo/youtube.png" alt=""></a>
         </div>
         <div class="mu-footer-copyright">
-          <p>&copy; Copyright <a rel="nofollow" href="http://markups.io">MonNgon365</a>. All right reserved.</p>
+          <p>&copy; Copyright <a rel="nofollow" href="{{route('trang-chu')}}">MonNgon365</a>. All right reserved.</p>
+            <p> Trường Đại Học Công Nghiệp Hà Nội</p>
+            <p> Nguyễn Văn Trưởng - Trương Minh Hiếu - Đoàn Thị Linh</p>
         </div>         
       </div>
     </div>

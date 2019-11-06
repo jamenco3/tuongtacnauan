@@ -1892,6 +1892,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['user'],
   data: function data() {
@@ -47273,7 +47274,18 @@ var render = function() {
         ? _c("span", { staticClass: "text-muted p-0" }, [
             _vm._v(_vm._s(_vm.activeUser.name) + " đang nhập...")
           ])
-        : _vm._e()
+        : _vm._e(),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-success",
+          staticStyle: { width: "80px" },
+          attrs: { type: "button" },
+          on: { click: _vm.sendMessage }
+        },
+        [_vm._v("Gửi đi")]
+      )
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "col-md-4" }, [

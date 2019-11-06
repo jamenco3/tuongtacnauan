@@ -267,7 +267,7 @@ class RecipeController extends Controller
         $recipes->step_1 = $request->step_1;// bước 1
         $recipes->step_2 = $request->step_2;// bước 2
         $recipes->step_3 = $request->step_3;// bước 3
-        $recipes->id_user = Auth::user()->id;
+        $recipes->id_user = $recipes->id_user;
         //bước 4 nếu có
         if($request->step_4 == "")
             $recipes->step_4 = "";

@@ -6,7 +6,7 @@
         <div class="row align-items-center">
             <div class="col-lg-4 col-md-4">
                 <div class="header_account">
-                   KTPM1-K11 - Nhóm 21
+                   Nhóm 21 - KTPM1-K11
                 </div>
             </div>
             <div class="col-lg-8 col-md-9">
@@ -27,7 +27,7 @@
                               <a href="wishlist.html"><i class="icon ion-clipboard"></i>  </a>
                             </li>  
                             @if(Auth::check())                          
-                            <li class="top_links"><a href="#"> Trang quản lý<i class="ion-chevron-down"></i></a>                        
+                            <li class="top_links"> {{Auth::user()->name}}<i class="ion-chevron-down"></i>
                                 <ul class="dropdown_links">
                                     @if(Auth::user()->role == 1)
                                     <li>
@@ -96,7 +96,7 @@
         </div>
         <div class="col-md-5 login-box" >       
           <div class="row col-md-10">
-            <div class="postRecipe col-md-6">
+            <div class=" postRecipe col-md-6">
               <a href="{{route('post')}}" onclick="myFunction()">
                 <div style="margin-top: 5px;">
                   <img width="30px"; height="30px" src="upload/logo/post.png" alt=""> Đăng công thức
@@ -122,9 +122,9 @@
                 </a>
             </div>
             @endif
-            <div class="message col-md-3">
-                <a style="margin-left: 146px;" href=""><img width="35px"; height="35px" src="upload/logo/tb.png" alt=""></a>
-            </div>
+{{--            <div class="message col-md-3">--}}
+{{--                <a style="margin-left: 146px;" href=""><img width="35px"; height="35px" src="upload/logo/tb.png" alt=""></a>--}}
+{{--            </div>--}}
           </div>
           </div>
       </div>
@@ -134,7 +134,6 @@
 
 <script>
     function myFunction() {
-
         alert("Bạn cần đăng nhập trước khi đăng bài");
     }
 </script>

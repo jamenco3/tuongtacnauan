@@ -54,7 +54,7 @@
                           <article class="single_product">
                               <figure>
                                  <div class="product_name" style="height: 40px">
-                                     <h4><a href="#"><strong>{{ $re->name }}</strong></a></h4>
+                                     <h4><a href="{{route('recipes', $re->id)}}"><strong>{{ $re->name }}</strong></a></h4>
                                  </div>
                                  {{-- <div class="product_rating">
                                      <ul>
@@ -79,7 +79,7 @@
                                           <span class="label_sale"><strong>Phần: </strong>{{ $re->eater }} người</span>                                         
                                       </div>
                                       <div class="quick_button">
-                                          <a href="#" title="quick view">>>><strong>Học nấu ngay</strong><<<</a>
+                                          <a href="{{route('recipes', $re->id)}}" title="quick view">>>><strong>Học nấu ngay</strong><<<</a>
                                       </div>
                                   </div>
                                   <div class="price_box"> 
@@ -114,7 +114,7 @@
                         <article class="single_product">
                             <figure>
                                <div class="product_name" style="height: 40px">
-                                   <h4><a href="#"><strong>{{ $re->name }}</strong></a></h4>
+                                   <h4><a href=""><strong>{{ $re->name }}</strong></a></h4>
                                </div>
                                {{-- <div class="product_rating">
                                    <ul>
@@ -139,7 +139,7 @@
                                         <span class="label_sale"><strong>Phần: </strong>{{ $re->eater }} người</span>                                         
                                     </div>
                                     <div class="quick_button">
-                                        <a href="#" title="quick view">>>><strong>Học nấu ngay</strong><<<</a>
+                                        <a href="{{route('recipes', $re->id)}}" title="quick view">>>><strong>Học nấu ngay</strong><<<</a>
                                     </div>
                                 </div>
                                 <div class="price_box"> 

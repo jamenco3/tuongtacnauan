@@ -39,7 +39,7 @@
                                   </a>
                                 </div>
                                 <div class="media-body">
-                                  <h4 class="media-heading"><a href="#"><strong>{{ $dsb->name }}</strong></a></h4>
+                                  <h4 class="media-heading"><a href=""><strong>{{ $dsb->name }}</strong></a></h4>
                                   <h5>{{ $dsb->note }}</h5>
                                   <p><strong>{{ $dsb->category->name }}</strong></p>
                                 </div>
