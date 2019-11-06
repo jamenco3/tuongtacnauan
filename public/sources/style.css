@@ -2311,7 +2311,8 @@ RESERVATION SECTION
 
 #guide{
   border: 0.5px solid #ddd;
-  background: #0e90d2;
+  background: #bed4cf;
+  border-radius: 10px;
 }
 
 .postRe{

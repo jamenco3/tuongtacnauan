@@ -26,7 +26,7 @@
                   <li>Tư vấn 24/7</li>
                   <li>Nhiệt tình là thứ chúng tôi không bao giờ thiếu.</li>
                 </ul>
-                <p><strong>Món ngon 365</strong> made by YunLove</p>  
+                <p><strong>Món ngon 365</strong> made by Group 21 - KTPM1 - K11</p>
               </div>
             </div>
           </div>

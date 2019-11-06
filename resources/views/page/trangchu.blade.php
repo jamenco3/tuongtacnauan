@@ -55,21 +55,12 @@
             <div class="row">
                 <div class="product_carousel product_column4 owl-carousel">
                   @foreach($recipes as $re)
-                  <div class="col-lg-3" style="height: 380px">
+                  <div class="col-lg-3" style="height: 400px">
                         <article class="single_product">
                             <figure>
                                <div class="product_name" style="height: 40px">
                                    <h4><a href="{{ route('recipes', $re->id) }}"><strong>{{ $re->name }}</strong></a></h4>
                                </div>
-                               {{-- <div class="product_rating">
-                                   <ul>
-                                       <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                       <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                       <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                       <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                       <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                   </ul>
-                               </div> --}}
 
                                 <div class="product_thumb">
                                     <a class="primary_img" href="{{route('recipes', $re->id)}}"><img style="border-radius: 10px" src="upload/dish/{{ $re->dish->image }}" alt=""></a>
@@ -88,8 +79,10 @@
                                     </div>
                                 </div>
                                 <div class="price_box"> 
-                                    <span><strong>Mô tả: </strong>{{ $re->dish->note }}</span> 
-                                    
+                                    <span><strong>Mô tả: </strong>{{ $re->dish->note }}</span>
+                                </div>
+                                <div class="price_box">
+                                    <span><strong>Người đăng: </strong>{{$re->user->name}}</span>
                                 </div>
                             </figure>
                         </article>
