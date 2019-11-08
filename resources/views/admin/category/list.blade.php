@@ -6,6 +6,8 @@
 	<div class="block">
 	    <div class="navbar navbar-inner block-header">
 	        <div class="muted pull-left">Thể loại->Danh sách</div>
+			<div class="pull-right"><span class="badge badge-info">Số thể loại là {{ count($category) }}</span>
+			</div>
 	    </div>
 	    <div class="block-content collapse in">
 	        <div class="span12">

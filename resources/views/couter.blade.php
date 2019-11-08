@@ -35,7 +35,7 @@
                 <div class="mu-single-counter">
                   <h2>Hài lòng</h2>
                   <h3><span class="counter-value" data-count="6560">0</span><sup>+</sup></h3>
-                  <p>Khách hàng</p>
+                  <p>Thực khách</p>
                 </div>
               </li>
 

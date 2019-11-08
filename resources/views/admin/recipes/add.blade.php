@@ -57,6 +57,26 @@
                           <div class="controls">
                             <input name="amount" placeholder="Nhập số nguyên liệu ..." type="numeric" class="span6" id="typeahead"  data-provide="typeahead" data-items="4" data-source='["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Dakota","North Carolina","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"]'>
                             <p class="help-block"></p>
+                              <button class="btn btn-success" onclick="hd()" type="button" id="btnh" style="display:block">Xem hướng dẫn nhập</button>
+                              <button class="btn btn-success" onclick="understand()" type="button" id="btnu" style="display:none">Đã hiểu</button>
+                              <div id="guide" style="display: none">
+                                  <p>gợi ý: </p>
+                                  <ul>
+                                      <li>Quy cách nhập: tên_nguyên_liệu định_lượng đơn_vị_tính ghi_chú </li>
+                                      <li>tên_nguyên_liệu: tên nguyên liệu, định_lượng: số lượng,đơn vị_tính: gram,lít,cái,...,ghi chú: diễn giải... </li>
+                                      <li>Nhập 1 nguyên liệu trên cùng 1 dòng:
+                                          <ul>
+                                              <li>*ví dụ: thịt gà 100gr (ghi chú)</li>
+                                          </ul>
+                                      </li>
+                                      <li>Nhập nhiều nguyên liệu trên cùng 1 dòng
+                                          <ul>
+                                              <li>*nhập nguyên liệu cách nhau bằng dấu (,)</li>
+                                              <li>*ví dụ: gà 1/4 con , trái ớt 3 quả, nước 1 lít</li>
+                                          </ul>
+                                      </li>
+                                  </ul>
+                              </div>
                           </div>
                         </div>
                         <div class="control-group">
@@ -233,6 +253,33 @@
                 // alert(id_theloai);
             });
         }); 
+    </script>
+    <script>
+        function hd() {
+            var dh = document.getElementById("guide");
+            var bh = document.getElementById("btnh");
+            var bu = document.getElementById("btnu");
+
+            if (dh.style.display === "none") {
+                dh.style.display = "block";
+                bh.style.display = "none";
+                bu.style.display = "block";
+            }
+
+        }
+    </script>
+    <script>
+        function understand() {
+            var dh = document.getElementById("guide");
+            var bh = document.getElementById("btnh");
+            var bu = document.getElementById("btnu");
+
+            if (dh.style.display === "block") {
+                dh.style.display = "none";
+                bh.style.display = "block";
+                bu.style.display = "none";
+            }
+        }
     </script>
     <script>
     function myFunction1() {

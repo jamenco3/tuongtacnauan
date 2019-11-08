@@ -1,4 +1,4 @@
-<section id="mu-restaurant-menu">
+<section id="mu-restaurant-menu" style="margin-top: -150px">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
@@ -32,12 +32,13 @@
                             <li>
                               <div class="media">
                                 <div class="media-left">
-                                  <a href="#">
+{{--                                  <a href="#">--}}
+                                    <a>
                                     <img style="border-radius: 10%" class="media-object" src="upload/dish/{{ $dsb->image}}" alt="img" width="110px" height="110px">
                                   </a>
                                 </div>
                                 <div class="media-body">
-                                  <h4 class="media-heading"><a href="#"><strong>{{ $dsb->name }}</strong></a></h4>
+                                  <h4 class="media-heading"><a><strong>{{ $dsb->name }}</strong></a></h4>
                                   <h5>{{ $dsb->note }}</h5>
                                   <p><strong>{{ $dsb->category->name }}</strong></p>
                                 </div>
@@ -63,12 +64,13 @@
                             <li>
                               <div class="media">
                                 <div class="media-left">
-                                  <a href="#">
+{{--                                  <a href="#">--}}
+                                    <a>
                                     <img style="border-radius: 10%" class="media-object" src="upload/dish/{{ $dsa->image}}" alt="img" width="110px" height="110px">
                                   </a>
                                 </div>
                                 <div class="media-body">
-                                  <h4 class="media-heading"><a href="#"><strong>{{ $dsa->name }}</strong></a></h4>
+                                  <h4 class="media-heading"><a><strong>{{ $dsa->name }}</strong></a></h4>
                                   <h5>{{ $dsa->note }}</h5>
                                   <p><strong>{{ $dsa->category->name }}</strong></p>
                                 </div>
@@ -94,12 +96,13 @@
                                     <li>
                                       <div class="media">
                                         <div class="media-left">
-                                          <a href="#">
+{{--                                          <a href="#">--}}
+                                            <a>
                                             <img style="border-radius: 10%" class="media-object" src="upload/dish/{{ $dsm->image}}" alt="img" width="110px" height="110px">
                                           </a>
                                         </div>
                                         <div class="media-body">
-                                          <h4 class="media-heading"><a href="#"><strong>{{ $dsm->name }}</strong></a></h4>
+                                          <h4 class="media-heading"><a><strong>{{ $dsm->name }}</strong></a></h4>
                                           <h5>{{ $dsm->note }}</h5>
                                           <p><strong>{{ $dsm->category->name }}</strong></p>
                                         </div>
@@ -125,12 +128,13 @@
                                     <li>
                                       <div class="media">
                                         <div class="media-left">
-                                          <a href="#">
+{{--                                          <a href="#">--}}
+                                            <a>
                                             <img style="border-radius: 10%" class="media-object" src="upload/dish/{{ $dsn->image}}" alt="img" width="110px" height="110px">
                                           </a>
                                         </div>
                                         <div class="media-body">
-                                          <h4 class="media-heading"><a href="#"><strong>{{ $dsn->name }}</strong></a></h4>
+                                          <h4 class="media-heading"><a><strong>{{ $dsn->name }}</strong></a></h4>
                                           <h5>{{ $dsn->note }}</h5>
                                           <p><strong>{{ $dsn->category->name }}</strong></p>
                                         </div>
@@ -156,12 +160,13 @@
                             <li>
                               <div class="media">
                                 <div class="media-left">
-                                  <a href="#">
+{{--                                  <a href="#">--}}
+                                    <a>
                                     <img style="border-radius: 10%" class="media-object" src="upload/dish/{{ $dsd->image}}" alt="img" width="110px" height="110px">
                                   </a>
                                 </div>
                                 <div class="media-body">
-                                  <h4 class="media-heading"><a href="#"><strong>{{ $dsd->name }}</strong></a></h4>
+                                  <h4 class="media-heading"><a><strong>{{ $dsd->name }}</strong></a></h4>
                                   <h5>{{ $dsd->note }}</h5>
                                   <p><strong>{{ $dsd->category->name }}</strong></p>
                                 </div>
@@ -191,12 +196,13 @@
                                 <li>
                                   <div class="media">
                                     <div class="media-left">
-                                      <a href="#">
+{{--                                      <a href="#">--}}
+                                        <a>
                                         <img style="border-radius: 10%" class="media-object" src="upload/dish/{{ $dss->image}}" alt="img" width="110px" height="110px">
                                       </a>
                                     </div>
                                     <div class="media-body">
-                                      <h4 class="media-heading"><a href="#"><strong>{{ $dss->name }}</strong></a></h4>
+                                      <h4 class="media-heading"><a><strong>{{ $dss->name }}</strong></a></h4>
                                       <h5>{{ $dss->note }}</h5>
                                       <p><strong>{{ $dss->category->name }}</strong></p>
                                     </div>

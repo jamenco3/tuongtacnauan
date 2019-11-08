@@ -488,6 +488,15 @@ img {
   width: 100%;
   margin-bottom: 20px;
   text-align: center;
+  height: 40px;
+  margin-top: -20px;
+  background: #ffbe76;
+  /*position: absolute;*/
+  /*top: -50px;*/
+  /*right: 40%;*/
+  /*background: white;*/
+  /*width: 90%;*/
+  /*text-align: center;*/
 }
 
 .mu-title .mu-subtitle {
@@ -2320,4 +2329,11 @@ RESERVATION SECTION
   margin-bottom:200px;
   border: 0.5px solid black;
   background-color: #e9ebee;
+}
+
+
+.title-sanpham{
+  border: 1px solid black;
+  border-bottom:2px solid black;
+  position: relative;
 }

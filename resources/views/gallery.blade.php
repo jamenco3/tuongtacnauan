@@ -1,4 +1,4 @@
-<section id="mu-gallery">
+<section id="mu-gallery" style="margin-top: -120px">
   <div class="container">
     <div class="row">
       <div class="col-md-12">

@@ -50,7 +50,7 @@
               <div class="row">
                   <div class="product_carousel product_column4 owl-carousel">
                     @foreach($recipes2 as $re)
-                    <div class="col-lg-3" style="height: 380px; background-color: #ecf0f1">
+                    <div class="col-lg-3" style="height: 420px; background-color: #ecf0f1">
                           <article class="single_product">
                               <figure>
                                  <div class="product_name" style="height: 40px">
@@ -67,7 +67,7 @@
                                  </div> --}}
 
                                   <div class="product_thumb">
-                                      <a class="primary_img" href="#"><img style="border-radius: 10px" src="upload/dish/{{ $re->dish->image }}" alt=""></a>
+                                      <a class="primary_img" href="{{route('recipes', $re->id)}}"><img style="border-radius: 10px" src="upload/dish/{{ $re->dish->image }}" alt=""></a>
                                       <div>
                                           <span class="label_sale"><strong>Độ khó: </strong>
                                             @if($re->level == 1) {{ "Dễ" }}
@@ -82,9 +82,11 @@
                                           <a href="{{route('recipes', $re->id)}}" title="quick view">>>><strong>Học nấu ngay</strong><<<</a>
                                       </div>
                                   </div>
-                                  <div class="price_box"> 
-                                      <span><strong>Mô tả: </strong>{{ $re->dish->note }}</span> 
-                                      
+                                  <div class="price_box" style="height: 100px;">
+                                      <span><strong>Mô tả: </strong>{{ $re->dish->note }}</span>
+                                  </div>
+                                  <div class="price_box">
+                                      <span><strong>Công thức bởi: </strong>{{$re->user->name}}</span>
                                   </div>
                               </figure>
                           </article>

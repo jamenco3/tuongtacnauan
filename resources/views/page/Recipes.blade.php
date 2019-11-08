@@ -32,7 +32,7 @@
                         <div id="DIV_17">
                             <span id="SPAN_18" style=" width: 120px;"> <span id="SPAN_19">Mục đích</span> <span
                                     id="SPAN_20">{{$Category->name}}</span></span> <span id="SPAN_21"> <span
-                                    id="SPAN_22">Cách thức thực hiện</span> <span id="SPAN_23">Nướng</span></span>
+                                    id="SPAN_22">Công thức bởi</span> <span id="SPAN_23">{{$recipe->user->name}}</span></span>
                         </div>
                         <h1 id="H1_24">
                             {{ $recipe->name }}
@@ -239,9 +239,12 @@
 
                                         <div id="DIV_457">
                                             <h4 id="H4_458">
-                                                <a href="" id="A_459">Bước <span id="SPAN_460"></span></a>{{$i+1}} <a
-                                                    href="" id="A_461">
-                                                    <!-- <span id="SPAN_462"></span> --></a>
+                                                <a style="color: #a4b0be; font-size: 30px" id="A_461">Bước
+                                                    {{--                                                  <span id="SPAN_462"></span>--}}
+                                                </a>
+                                                <br>
+                                                <a style="color: Red; font-size: 30px" id="A_459">{{$i+1}} <span style="font-size: 30px" id="SPAN_460"></span></a>
+
                                             </h4>
                                         </div>
 

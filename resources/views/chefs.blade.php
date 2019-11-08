@@ -22,10 +22,10 @@
                       <span>Đến từ: {{ $mt->address }}</span>
                     </div>
                     <div class="mu-single-chef-social">
-                      <a href="#"><i class="fa fa-facebook"></i></a>
-                      <a href="#"><i class="fa fa-twitter"></i></a>
-                      <a href="#"><i class="fa fa-google-plus"></i></a>
-                      <a href="#"><i class="fa fa-linkedin"></i></a>
+                      <a ><i class="fa fa-facebook"></i></a>
+                      <a ><i class="fa fa-twitter"></i></a>
+                      <a ><i class="fa fa-google-plus"></i></a>
+                      <a ><i class="fa fa-linkedin"></i></a>
                     </div>
                   </div>
                 </li>  

@@ -6,6 +6,8 @@
 	<div class="block">
 	    <div class="navbar navbar-inner block-header">
 	        <div class="muted pull-left">Công thức -> Danh sách</div>
+			<div class="pull-right"><span class="badge badge-info">Số công thức là {{ count($recipes) }}</span>
+			</div>
 	    </div>
 	    <div class="block-content collapse in">
 	        <div class="span12">
