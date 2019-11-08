@@ -25,7 +25,6 @@
 <!--===============================================================================================-->
 </head>
 <body>
-	
 	<div class="limiter">
 		<div class="container-login100" style="background-image: url('images/img-01.jpg');">
 			<div class="wrap-login100 p-t-190 p-b-30">
@@ -49,7 +48,7 @@
 					</div>
 
 					<span class="login100-form-title p-t-20 p-b-45">
-						Đăng nhập
+{{--						Đăng nhập--}}
 					</span>
 
 					<div class="wrap-input100 validate-input m-b-10" data-validate = "Username is required">
@@ -69,7 +68,7 @@
 					</div>
 
 					<div class="container-login100-form-btn p-t-10">
-						<button class="login100-form-btn">
+						<button class="login100-form-btn ">
 							<a>Đăng nhập</a>
 						</button>
 					</div>

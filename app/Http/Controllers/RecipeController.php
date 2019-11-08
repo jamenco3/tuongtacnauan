@@ -14,8 +14,8 @@ use Illuminate\Support\Facades\Auth;
 class RecipeController extends Controller
 {
     public function getList(){
-        // $recipes = Recipes::orderBy('id','DESC')->paginate(5,['*'],'page1');
-        $recipes = Recipes::all();
+         $recipes = Recipes::orderBy('id','DESC')->get();
+//        $recipes = Recipes::all();
         return view('admin.recipes.list',['recipes'=>$recipes]);
     }
 
@@ -628,7 +628,7 @@ class RecipeController extends Controller
         $recipes->status = 0; // trạng thái
         $recipes->save();
 
-        return redirect('page.post')->with('thongbao','Bạn đã thêm thành công! ');
+        return redirect('post')->with('thongbao','Bạn đã đăng thành công! ');
     }
 
     public function getDelete($id){

@@ -183,10 +183,11 @@ iframe {
   top: 0;
   left: 0;
   background: #005bea;
-  background: -webkit-linear-gradient(bottom, #005bea, #00c6fb);
-  background: -o-linear-gradient(bottom, #005bea, #00c6fb);
+  background: -webkit-linear-gradient(bottom, #6D214F, #00c6fb);
+  background: -o-linear-gradient(bottom, #005bea, #FC427B);
   background: -moz-linear-gradient(bottom, #005bea, #00c6fb);
   background: linear-gradient(bottom, #005bea, #00c6fb);
+  /*background-image: url('upload/about/login1.jpg');*/
   opacity: 0.9;
 }
 
@@ -201,6 +202,7 @@ iframe {
 [  ]*/
 .login100-form {
   width: 100%;
+  margin-top: -100px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;

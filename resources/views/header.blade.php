@@ -134,6 +134,6 @@
 
 <script>
     function myFunction() {
-        alert("Bạn cần đăng nhập trước khi đăng bài");
+        alert("Cần đăng nhập trước khi đăng bài");
     }
 </script>
